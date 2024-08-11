@@ -1,20 +1,10 @@
-﻿using System.Reflection;
-
 namespace uWidgets.Core.Models;
 
 /// <summary>
-/// Information about an assembly.
+/// Represents the information of an assembly.
 /// </summary>
-/// <param name="filePath">The path to the assembly file.</param>
-public class AssemblyInfo(string filePath)
-{
-    /// <summary>
-    /// The path to the assembly file.
-    /// </summary>
-    public readonly string FilePath = filePath;
-    
-    /// <summary>
-    /// Object containing information about the assembly, such as its name, version, and culture.
-    /// </summary>
-    public readonly AssemblyName AssemblyName = AssemblyName.GetAssemblyName(filePath);
-}
+/// <param name="FilePath">The path to the file that contains the assembly.</param>
+/// <param name="DisplayName">Display name of the assembly.</param>
+/// <param name="Author">Author of the assembly.</param>
+/// <param name="Version">Version of the assembly.</param>
+public record AssemblyInfo(string FilePath, string AssemblyName, string DisplayName, string Author, Version Version);

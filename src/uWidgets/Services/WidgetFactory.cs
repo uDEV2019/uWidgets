@@ -57,7 +57,7 @@ public class WidgetFactory(IAssemblyProvider assemblyProvider, ILayoutProvider l
         if (model != null)
             args.Add(model);
 
-        return (UserControl) assemblyProvider.Activate(type, args.ToArray());
+        return (assemblyProvider.Activate(type, args.ToArray()) as UserControl)!;
     }
 
     private EditWidget CreateEditWidgetWindow(IWidgetLayoutProvider widgetLayoutProvider, Type type)

@@ -43,7 +43,7 @@ public class SettingsViewModel(IAppSettingsProvider appSettingsProvider, IAssemb
                 typeof(Gallery), 
                 assemblyInfo.Key, 
                 assemblyInfo.Key, 
-                assemblyInfo.MaxBy(assembly => assembly.AssemblyName.Version)))
+                assemblyInfo.MaxBy(assembly => assembly.Version)))
             .ToArray();
 
     public void SetCurrentPage(PageViewModel? value)

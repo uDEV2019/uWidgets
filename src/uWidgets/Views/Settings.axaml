@@ -24,18 +24,20 @@
         <TextBlock Name="AppTitle" IsHitTestVisible="False" Margin="16 16 0  16" FontWeight="Bold">uWidgets</TextBlock>
         <SplitView Name="SplitView" Grid.Row="1" IsPaneOpen="True" DisplayMode="CompactInline" PaneBackground="Transparent" OpenPaneLength="240" CompactPaneLength="60">
             <SplitView.Pane>
-                <StackPanel Margin="0 0 12 0">
-                    <ListBox Name="ListBox" Background="Transparent" SelectionMode="Single" ItemsSource="{Binding AllItems}" SelectionChanged="OnMenuItemChanged">
-                        <ListBox.ItemTemplate>
-                            <DataTemplate DataType="viewModels:PageViewModel">
-                                <StackPanel Orientation="Horizontal" Spacing="12">
-                                    <PathIcon Data="{Binding Icon}" Height="16" />
-                                    <TextBlock Text="{Binding Text}" />
-                                </StackPanel>
-                            </DataTemplate>
-                        </ListBox.ItemTemplate>
-                    </ListBox>
-                </StackPanel>
+                <ScrollViewer>
+                    <StackPanel Margin="0 0 12 0">
+                        <ListBox Name="ListBox" Background="Transparent" SelectionMode="Single" ItemsSource="{Binding AllItems}" SelectionChanged="OnMenuItemChanged">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate DataType="viewModels:PageViewModel">
+                                    <StackPanel Orientation="Horizontal" Spacing="12">
+                                        <PathIcon Data="{Binding Icon}" Height="16" />
+                                        <TextBlock Text="{Binding Text}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </StackPanel>
+                </ScrollViewer>
             </SplitView.Pane>
             <SplitView.Content>
                 <Grid RowDefinitions="Auto, *" MaxWidth="800">

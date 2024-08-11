@@ -41,31 +41,29 @@ public partial class Gallery : UserControl
     private List<WidgetPreviewViewModel> GetWidgets()
     {
         var assembly = assemblyProvider
-            .LoadAssembly(assemblyInfo.AssemblyName.Name!);
+            .LoadAssembly(assemblyInfo.AssemblyName);
 
-        var resources = (ResourceManager?) assembly
-            .GetTypes()
-            .FirstOrDefault(type => type.Name == nameof(Locale))?
-            .GetProperty(nameof(ResourceManager), BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Public)?
-            .GetValue(null);
+        var locale = assemblyProvider.GetLocaleResourceManager(assembly);
 
-        return assembly
+        var widgets =  assembly
             .GetCustomAttributes<WidgetInfoAttribute>()
             .Select(widgetInfo => new WidgetPreviewViewModel(
                 widgetFactory.CreateControl(widgetInfo.ViewType),
-                assemblyInfo.AssemblyName.Name!,
+                assemblyInfo.AssemblyName,
                 widgetInfo.ViewType.Name,
-                resources?.GetString(widgetInfo.Title ?? string.Empty),
-                resources?.GetString(widgetInfo.Subtitle ?? string.Empty)
+                locale?.GetString(widgetInfo.Title ?? string.Empty),
+                locale?.GetString(widgetInfo.Subtitle ?? string.Empty)
             ))
             .ToList();
+
+        return widgets;
     }
     
     private void OnUnloaded(object? sender, RoutedEventArgs e)
     {
-        if (layoutProvider.Get().All(x => x.Type != assemblyInfo.AssemblyName.Name!))
+        if (layoutProvider.Get().All(x => x.Type != assemblyInfo.AssemblyName))
         {
-            assemblyProvider.UnloadAssembly(assemblyInfo.AssemblyName.Name!);
+            assemblyProvider.UnloadAssembly(assemblyInfo.AssemblyName);
         }
     }
 
@@ -75,7 +73,7 @@ public partial class Gallery : UserControl
         var viewModel = button!.DataContext as WidgetPreviewViewModel;
         var dimensions = appSettingsProvider.Get().Dimensions;
         var size = 2 * dimensions.Size + dimensions.Margin;
-        var position = button!.PointToScreen(new Point(0, 0));
+        var position = button.PointToScreen(new Point(0, 0));
 
         var widgetSettings = new WidgetLayout(viewModel!.Type, viewModel.Subtype, position.X, position.Y, size, size, null);
         widgetFactory.Add(widgetSettings).Show();

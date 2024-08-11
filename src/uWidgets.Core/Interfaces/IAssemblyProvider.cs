@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using System.Resources;
 using uWidgets.Core.Models;
 
 namespace uWidgets.Core.Interfaces;
@@ -39,4 +40,11 @@ public interface IAssemblyProvider
     /// <returns>Activated object.</returns>
     /// <exception cref="InvalidOperationException">No matching constructor is found.</exception>
     public object Activate(Type type, params object[] args);
+
+    /// <summary>
+    /// Get the locale resource manager of the specified assembly.
+    /// </summary>
+    /// <param name="assembly">The assembly to get the locale resource manager from.</param>
+    /// <returns></returns>
+    public ResourceManager? GetLocaleResourceManager(Assembly assembly);
 }
