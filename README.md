@@ -6,18 +6,19 @@
   <br/>
   Standalone .NET application with a&nbsp;variety of&nbsp;customizable widgets.
 </p>
-<p align="center">
+<div align="center">
   <b><a href="https://github.com/creewick/uWidgets/releases">Download</a></b> ・
   <a href="https://github.com/users/creewick/projects/4">Roadmap</a> ・
   <a href="https://github.com/creewick/uWidgets/wiki/API">API</a> ・
   <a href="https://github.com/creewick/uWidgets/discussions">Discussions</a> ・
   <a href="https://github.com/creewick/uWidgets/issues">Report a bug</a>
-</p>
-<p align="center">
+</div>
+<br/>
+<div align="center">
   <img src="https://img.shields.io/github/downloads/creewick/uWidgets/total"/>
   <img src="https://img.shields.io/github/stars/creewick/uWidgets?style=flat"/>
   <img src="https://img.shields.io/github/v/tag/creewick/uWidgets?label=version"/>
-</p>
+</div>
 
 ## Features
 
