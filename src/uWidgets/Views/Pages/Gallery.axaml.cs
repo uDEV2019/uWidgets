@@ -1,14 +1,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Resources;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using uWidgets.Core.Interfaces;
 using uWidgets.Core.Models;
 using uWidgets.Core.Models.Attributes;
-using uWidgets.Locales;
 using uWidgets.ViewModels;
 
 namespace uWidgets.Views.Pages;

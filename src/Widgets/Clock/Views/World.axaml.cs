@@ -2,7 +2,6 @@
 using Avalonia.Interactivity;
 using Clock.Models;
 using Clock.ViewModels;
-using uWidgets.Services;
 
 namespace Clock.Views;
 

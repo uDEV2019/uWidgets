@@ -27,7 +27,7 @@ public class DateCalendarViewModel : ReactiveObject, IDisposable
         if (currentDate.Date == now.Date) return;
 
         currentDate = now;
-        Month = format.GetAbbreviatedMonthName(now.Month);
+        Month = format.GetAbbreviatedMonthName(now.Month).Replace(".", "");
         DayOfWeek = format.GetAbbreviatedDayName(now.DayOfWeek).Replace(".", "");
         Day = now.Day.ToString();
     }
