@@ -4,7 +4,7 @@
 
 <p align="center">
   <br/>
-  Standalone .NET application designed to&nbsp;enhance your Windows experience with a&nbsp;variety of&nbsp;customizable widgets.
+  Standalone .NET application with a&nbsp;variety of&nbsp;customizable widgets.
 </p>
 <p align="center">
   <b><a href="https://github.com/creewick/uWidgets/releases">Download</a></b> ・
@@ -119,6 +119,10 @@ You can also resize the widget by it's corner to set the desired size manually.
 <kbd align="center">
   <img src="https://github.com/yammadev/flag-icons/blob/master/png/KR@2x.png?raw=true" width="48px" />
   <br/><br/><b>Korean</b>
+</kbd>
+<kbd align="center">
+  <img src="https://github.com/yammadev/flag-icons/blob/master/png/GR@2x.png?raw=true" width="48px" />
+  <br/><br/><b>Greek</b>
 </kbd>
 
 ## System requirements
