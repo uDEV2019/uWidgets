@@ -39,11 +39,12 @@ public class SettingsViewModel(IAppSettingsProvider appSettingsProvider, IAssemb
     private readonly PageViewModel[] widgetItems =
      assemblyProvider
             .GetAssemblyInfos(Const.WidgetsFolder)
-            .Select(assemblyInfo => new PageViewModel(
-                typeof(Gallery), 
-                assemblyInfo.Key, 
-                assemblyInfo.Key, 
-                assemblyInfo.MaxBy(assembly => assembly.Version)))
+            .ToDictionary(
+                group => group.Key, 
+                group => group.MaxBy(assembly => assembly.Version)!)
+            .Select(assembly => new PageViewModel(
+                    typeof(Gallery), null, assembly.Value.DisplayName, assembly.Value 
+                    ))
             .ToArray();
 
     public void SetCurrentPage(PageViewModel? value)
