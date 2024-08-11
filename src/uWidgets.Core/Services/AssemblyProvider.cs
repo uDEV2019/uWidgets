@@ -148,7 +148,13 @@ public class AssemblyProvider : IAssemblyProvider
         protected override IntPtr LoadUnmanagedDll(string unmanagedDllName)
         {
             var libraryPath = resolver.ResolveUnmanagedDllToPath(unmanagedDllName);
-            return LoadUnmanagedDllFromPath(libraryPath!);
+    
+            if (libraryPath != null)
+            {
+                return LoadUnmanagedDllFromPath(libraryPath);
+            }
+
+            return IntPtr.Zero;
         }
     }
 }
