@@ -31,7 +31,7 @@ public static class MetricService
                 MetricType.DiskUsage => Task.Run(GetDiskUsage),
                 MetricType.NetworkUsage => Task.Run(GetNetworkUsage),
                 MetricType.BatteryLevel => Task.Run(GetBatteryLevel),
-                _ => throw new NotImplementedException()
+                _ => throw new ArgumentException()
             };
         }
         catch (Exception)
