@@ -42,7 +42,7 @@ public partial class Widget : Window
         ContentPresenter.Content = userControl();
         DataContext = this;
         
-        InteropService.RemoveWindowFromAltTab(this);
+        Activated += (_, _) => InteropService.RemoveWindowFromAltTab(this);
         RenderOptions.SetTextRenderingMode(this, TextRenderingMode.Antialias);
         
         PointerPressed += OnPointerPressed;
