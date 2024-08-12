@@ -25,6 +25,16 @@ jobs:
         with:
           dotnet-version: 8.0.x
 
+      - name: Build
+        run: dotnet build .\src\uWidgets.sln --configuration Release
+
+      - name: Upload build
+        if: ${{ matrix.runtime == 'win-x64' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: build
+          path: .\src\uWidgets\bin\Release\net8.0
+
       - name: Publish App
         run: |
           dotnet publish .\src\uWidgets\uWidgets.csproj `
@@ -37,7 +47,8 @@ jobs:
       - name: Publish Widgets
         run: |
           $widgetsPath = ".\src\Widgets"
-          $outputPath = ".\src\uWidgets\bin\Publish\${{ matrix.runtime }}\Widgets"
+          $publishPath = ".\src\uWidgets\bin\Publish\${{ matrix.runtime }}"
+          $outputPath = "$publishPath\Widgets"
           if (-not (Test-Path -Path $outputPath)) {
             New-Item -Path $outputPath -ItemType Directory -Force
           }
@@ -54,8 +65,10 @@ jobs:
               /p:PublishReadyToRun=true
           }
           
-          Get-ChildItem -Path $outputPath -Filter *.pdb -Recurse | Remove-Item -Force
-          Get-ChildItem -Path $outputPath -Filter *.deps.json -Recurse | Remove-Item -Force
+          Get-ChildItem -Path $publishPath -Filter *.pdb -Recurse | Remove-Item -Force
+          Get-ChildItem -Path $publishPath -Filter *.xml -Recurse | Remove-Item -Force
+          Get-ChildItem -Path $publishPath -Filter *.deps.json -Recurse | Remove-Item -Force
+          Get-ChildItem -Path $publishPath -Filter *.runtimeconfig -Recurse | Remove-Item -Force
 
       - name: Archive
         run: |
