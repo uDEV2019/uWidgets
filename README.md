@@ -1,9 +1,8 @@
-# uWidgets
-<img src=".github/images/icon-light.png#gh-light-mode-only" width="140" alt="Logo" align="left">
-<img src=".github/images/icon-dark.png#gh-dark-mode-only" width="140" alt="Logo" align="left">
+## uWidgets
+<img src=".github/images/icon-light.png#gh-light-mode-only" width="104" alt="Logo" align="left">
+<img src=".github/images/icon-dark.png#gh-dark-mode-only" width="104" alt="Logo" align="left">
 
 <p align="center">
-  <br/>
   Standalone .NET application with a&nbsp;variety of&nbsp;customizable widgets.
 </p>
 <div align="center">
@@ -27,13 +26,16 @@
 <img src=".github/images/widget-line-light.png#gh-light-mode-only">
 <img src=".github/images/widget-line-dark.png#gh-dark-mode-only">
 
-5 types of fully customizable widgets: 
+6 types of fully customizable widgets
 
-<kbd align="center"><br/>&nbsp;&nbsp;&nbsp;🕒&nbsp;&nbsp;&nbsp;<br/><br/><b>Clock</b><br/><br/></kbd>
-<kbd align="center"><br/>&nbsp;&nbsp;&nbsp;📅&nbsp;&nbsp;&nbsp;<br/><br/><b>Calendar</b><br/><br/></kbd>
-<kbd align="center"><br/>&nbsp;&nbsp;&nbsp;🗒️&nbsp;&nbsp;&nbsp;<br/><br/><b>Notes</b><br/><br/></kbd>
-<kbd align="center"><br/>&nbsp;&nbsp;&nbsp;✅&nbsp;&nbsp;&nbsp;<br/><br/><b>Reminders</b><br/><br/></kbd>
-<kbd align="center"><br/>&nbsp;&nbsp;&nbsp;⛅️&nbsp;&nbsp;&nbsp;<br/><br/><b>Weather</b><br/><br/></kbd>
+| Widget | Views | Features |
+|:-:|:-|:-|
+|**🕒<br>Clock**| <li> 3 × Analog clock <li> Digital Clock <li> World Clock | <li> Timezones support <li> Show/hide seconds |
+|**📅<br>Calendar**| <li> Day View <li> Month View | <li> Change first day of week |
+|**🗒️<br>Notes**| <li> Note | <li> Interactive text note |
+|**✅<br>Reminders**| <li> List | <li> Interactive to-do list |
+|**⛅️<br>Weather**| <li> Forecast | <li> Forecast up to 7 days <li> Search city by name |
+|**📊<br>Monitor**| <li> Single Metric | <li> CPU usage <li> RAM usage <li> Disk usage <li> Network usage <li> Battery level |
 
 ### Themes
 
@@ -46,8 +48,6 @@
 - 🔲 **Monochrome** theme
 
 ### Grid
-<kbd>&nbsp;</kbd> <kbd>&nbsp;</kbd><br/>
-<kbd>&nbsp;</kbd> <kbd>&nbsp;</kbd>
 
 Widgets are designed to snap their **position** and **size** to the virtual grid.<br/>
 You can change the grid cell **size** and **margin** between widgets, or disable the grid completely.
@@ -58,12 +58,10 @@ You can set size of each individual widget.
 There are 4 presets:
 
 <kbd align="center">
-  <b>Small</b><br/><br/>
-  2×2
-</kbd>
-<kbd align="center">
-  <b>&nbsp;&nbsp;Medium&nbsp;&nbsp;</b><br/><br/>
-  4×2
+  <br/><br/>
+  <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Extra Large&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><br/><br/>
+  8×4
+  <br/><br/><br/>
 </kbd>
 <kbd align="center">
   <br/><br/>
@@ -72,12 +70,13 @@ There are 4 presets:
   <br/><br/><br/>
 </kbd>
 <kbd align="center">
-  <br/><br/>
-  <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Extra Large&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><br/><br/>
-  8×4
-  <br/><br/><br/>
+  <b>&nbsp;&nbsp;Medium&nbsp;&nbsp;</b><br/><br/>
+  4×2
 </kbd>
-<br/><br/>
+<kbd align="center">
+  <b>Small</b><br/><br/>
+  2×2
+</kbd>
 
 You can also resize the widget by it's corner to set the desired size manually.
 
@@ -139,9 +138,7 @@ You can also resize the widget by it's corner to set the desired size manually.
 
 ## Deinstallation
 
-1. Disable "Run on startup" from the app's settings window
-2. Exit the application
-3. Delete `uWidgets` folder
+1. Delete `uWidgets` folder
 
 The app's portable and doesn't store any data outside that folder
 
