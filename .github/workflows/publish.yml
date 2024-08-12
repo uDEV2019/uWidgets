@@ -25,20 +25,7 @@ jobs:
         with:
           dotnet-version: 8.0.x
 
-      - name: Setup MSBuild
-        uses: microsoft/setup-msbuild@v2
-
-      - name: Build
-        run: dotnet build .\src\uWidgets.sln --configuration Release
-
-      - name: Upload build
-        if: ${{ matrix.runtime == 'win-x64' }}
-        uses: actions/upload-artifact@v4
-        with:
-          name: build
-          path: .\src\uWidgets\bin\Release\net8.0
-
-      - name: Publish
+      - name: Publish App
         run: |
           dotnet publish .\src\uWidgets\uWidgets.csproj `
           --configuration Release `
@@ -47,22 +34,28 @@ jobs:
           --self-contained false `
           /p:PublishReadyToRun=true
 
-      - name: Copy Widgets
+      - name: Publish Widgets
         run: |
-          New-Item `
-            -Path .\src\uWidgets\bin\Publish\${{ matrix.runtime }}\Widgets `
-            -ItemType Directory `
-          -Force
-          Copy-Item `
-            -Path .\src\uWidgets\bin\Release\net8.0\Widgets\* `
-            -Destination .\src\uWidgets\bin\Publish\${{ matrix.runtime }}\Widgets `
-            -Recurse `
-            -Force
+          $widgetsPath = ".\src\Widgets"
+          $outputPath = ".\src\uWidgets\bin\Publish\${{ matrix.runtime }}\Widgets"
+          if (-not (Test-Path -Path $publishOutputPath)) {
+            New-Item -Path $publishOutputPath -ItemType Directory -Force
+          }
+          $widgetCsproj = Get-ChildItem -Path $widgetsPath -Recurse -Filter *.csproj
+          
+          foreach ($csproj in $widgetCsproj) {
+            $widgetName = Split-Path $csproj.DirectoryName -Leaf
 
-      - name: Clean up
-        run: |
-          Get-ChildItem -Path .\src\uWidgets\bin\Publish\${{ matrix.runtime }} -Filter *.pdb -Recurse | Remove-Item -Force
-          Get-ChildItem -Path .\src\uWidgets\bin\Publish\${{ matrix.runtime }} -Filter *.deps.json -Recurse | Remove-Item -Force
+            dotnet publish $csproj.FullName `
+              --configuration Release `
+              --runtime ${{ matrix.runtime }} `
+              --output $outputPath `
+              --self-contained false `
+              /p:PublishReadyToRun=true
+          }
+          
+          Get-ChildItem -Path $outputPath -Filter *.pdb -Recurse | Remove-Item -Force
+          Get-ChildItem -Path $outputPath -Filter *.deps.json -Recurse | Remove-Item -Force
 
       - name: Archive
         run: |
