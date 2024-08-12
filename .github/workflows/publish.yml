@@ -38,8 +38,8 @@ jobs:
         run: |
           $widgetsPath = ".\src\Widgets"
           $outputPath = ".\src\uWidgets\bin\Publish\${{ matrix.runtime }}\Widgets"
-          if (-not (Test-Path -Path $publishOutputPath)) {
-            New-Item -Path $publishOutputPath -ItemType Directory -Force
+          if (-not (Test-Path -Path $outputPath)) {
+            New-Item -Path $outputPath -ItemType Directory -Force
           }
           $widgetCsproj = Get-ChildItem -Path $widgetsPath -Recurse -Filter *.csproj
           
