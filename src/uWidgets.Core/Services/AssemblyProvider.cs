@@ -42,25 +42,33 @@ public class AssemblyProvider : IAssemblyProvider
 
     private AssemblyInfo? GetAssemblyInfo(string filePath)
     {
-        var context = new AssemblyLoadContext(filePath, true);
-        var assembly = context.LoadFromAssemblyPath(filePath);
-        var localeAttribute = assembly.GetCustomAttributes<LocaleAttribute>().FirstOrDefault();
-        var companyAttribute = assembly.GetCustomAttributes<AssemblyCompanyAttribute>().FirstOrDefault();
-        var widgetAttributes = assembly.GetCustomAttributes<WidgetInfoAttribute>();
+        try
+        {
+            var context = new AssemblyLoadContext(filePath, true);
+            var assembly = context.LoadFromAssemblyPath(filePath);
+            var localeAttribute = assembly.GetCustomAttributes<LocaleAttribute>().FirstOrDefault();
+            var companyAttribute = assembly.GetCustomAttributes<AssemblyCompanyAttribute>().FirstOrDefault();
+            var widgetAttributes = assembly.GetCustomAttributes<WidgetInfoAttribute>();
 
-        if (!widgetAttributes.Any()) return null;
+            if (!widgetAttributes.Any()) return null;
 
-        var assemblyName = assembly.GetName().Name!;
-        var version = assembly.GetName().Version!;
-        var company = companyAttribute?.Company ?? "";
-        var locale = GetLocaleResourceManager(assembly);
-        var displayName = locale?.GetString(localeAttribute?.DisplayName ?? "") ?? assemblyName;
-        
-        context.Unload();
-        GC.Collect();
-        GC.WaitForPendingFinalizers();
-        
-        return new AssemblyInfo(filePath, assemblyName, displayName, company, version);
+            var assemblyName = assembly.GetName().Name!;
+            var version = assembly.GetName().Version!;
+            var company = companyAttribute?.Company ?? "";
+            var locale = GetLocaleResourceManager(assembly);
+            var displayName = locale?.GetString(localeAttribute?.DisplayName ?? "") ?? assemblyName;
+
+            context.Unload();
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+
+            return new AssemblyInfo(filePath, assemblyName, displayName, company, version);
+        }
+        catch (Exception)
+        {
+            return null;
+        }
+       
     }
     
     /// <inheritdoc />

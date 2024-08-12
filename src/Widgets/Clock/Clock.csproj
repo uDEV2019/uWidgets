@@ -8,6 +8,7 @@
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
         <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+        <EnableDynamicLoading>true</EnableDynamicLoading>
     </PropertyGroup>
 
     <ItemGroup>
@@ -20,12 +21,14 @@
     <ItemGroup>
       <ProjectReference Include="..\..\uWidgets\uWidgets.csproj">
         <Private>false</Private>
+          <ExcludeAssets>runtime</ExcludeAssets>
       </ProjectReference>
     </ItemGroup>
 
     <ItemGroup>
         <ProjectReference Include="..\..\uWidgets.Core\uWidgets.Core.csproj">
             <Private>false</Private>
+            <ExcludeAssets>runtime</ExcludeAssets>
         </ProjectReference>
     </ItemGroup>
 
@@ -54,7 +57,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Avalonia" Version="11.1.2" />
-      <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.11" />
+      <PackageReference Include="Avalonia" Version="11.1.2" PrivateAssets="all" ExcludeAssets="runtime" />
+      <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.11" PrivateAssets="all" ExcludeAssets="runtime" />
     </ItemGroup>
 </Project>
