@@ -32,7 +32,7 @@ public class ForecastViewModel : ReactiveObject, IDisposable
         var currentHour = DateTime.Now.Hour;
 
         CurrentTemperature = $"{forecast.Current.Temperature:0}°";
-        CurrentIcon = WeatherIconProvider.GetIcon(forecast.Current.WeatherCode);
+        CurrentIcon = forecast.Hourly.IsDay[currentHour] > 0 ? WeatherIconProvider.GetIcon(forecast.Current.WeatherCode) : WeatherIcon.Night;
         CurrentCondition = GetCondition(forecast.Current.WeatherCode);
         CurrentMinMax = $"{forecast.Daily.Max[0]:0}°  {forecast.Daily.Min[0]:0}°";
         CurrentMin = $"{forecast.Daily.Min[0]:0}";

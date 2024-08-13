@@ -62,7 +62,7 @@ public class AssemblyProvider : IAssemblyProvider
             GC.Collect();
             GC.WaitForPendingFinalizers();
 
-            return new AssemblyInfo(filePath, assemblyName, displayName, company, version);
+            return new AssemblyInfo(filePath, assemblyName, displayName, company, version, localeAttribute?.IconData ?? "");
         }
         catch (Exception)
         {

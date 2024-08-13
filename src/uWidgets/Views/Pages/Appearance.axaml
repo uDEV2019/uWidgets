@@ -58,29 +58,5 @@
                 </ComboBox>
             </StackPanel>
         </controls:Setting>
-        <TextBlock FontSize="14" FontWeight="SemiBold" Margin="0 20 0 10"
-                   Text="{x:Static locales:Locale.Settings_Appearance_Size}"/>
-        <controls:Setting Icon="{DynamicResource SnapSize}" 
-                          Title="{x:Static locales:Locale.Settings_Appearance_SnapSize_Title}" 
-                          Subtitle="{x:Static locales:Locale.Settings_Appearance_SnapSize_Subtitle}">
-            <ToggleSwitch IsChecked="{Binding SnapSize}" />
-        </controls:Setting>
-        <controls:Setting Icon="{DynamicResource Lock}" 
-                          Title="{x:Static locales:Locale.Settings_Appearance_LockSize_Title}" 
-                          Subtitle="{x:Static locales:Locale.Settings_Appearance_LockSize_Subtitle}">
-            <ToggleSwitch IsChecked="{Binding LockSize}" />
-        </controls:Setting>
-        <TextBlock FontSize="14" FontWeight="SemiBold" Margin="0 20 0 10"
-                   Text="{x:Static locales:Locale.Settings_Appearance_Position}"/>
-        <controls:Setting Icon="{DynamicResource SnapPosition}" 
-                          Title="{x:Static locales:Locale.Settings_Appearance_SnapPosition_Title}" 
-                          Subtitle="{x:Static locales:Locale.Settings_Appearance_SnapPosition_Subtitle}">
-            <ToggleSwitch IsChecked="{Binding SnapPosition}" />
-        </controls:Setting>
-        <controls:Setting Icon="{DynamicResource Lock}" 
-                          Title="{x:Static locales:Locale.Settings_Appearance_LockPosition_Title}" 
-                          Subtitle="{x:Static locales:Locale.Settings_Appearance_LockPosition_Subtitle}">
-            <ToggleSwitch IsChecked="{Binding LockPosition}" />
-        </controls:Setting>
     </StackPanel>
 </UserControl>

@@ -19,7 +19,7 @@ public partial class Settings : Window
         KeyDown += OnKeyDown;
         Unloaded += OnUnloaded;
         InitializeComponent();
-        ListBox.SelectedItem = SettingsViewModel.MenuItems[0];
+        ListBox.SelectedItem = SettingsViewModel.MenuItems[1];
     }
 
     private void OnKeyDown(object? sender, KeyEventArgs e)

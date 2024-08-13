@@ -8,7 +8,7 @@ namespace uWidgets.Core.Models.Attributes;
 /// <param name="localeType">Type of auto-generated <c>Locale.Designer.cs</c> class</param>
 /// <param name="displayName">Resource key of your assembly's display name</param>
 [AttributeUsage(AttributeTargets.Assembly, AllowMultiple = true)]
-public class LocaleAttribute(Type localeType, string? displayName = null) : Attribute
+public class LocaleAttribute(Type localeType, string? displayName = null, string? iconData = null) : Attribute
 {
     /// <summary>
     /// Type of auto-generated <c>Locale.Designer.cs</c> class.
@@ -19,4 +19,9 @@ public class LocaleAttribute(Type localeType, string? displayName = null) : Attr
     /// Resource key of your assembly's display name.
     /// </summary>
     public string? DisplayName { get; } = displayName;
+
+    /// <summary>
+    /// Icon data of your assembly.
+    /// </summary>
+    public string? IconData { get; } = iconData;
 }

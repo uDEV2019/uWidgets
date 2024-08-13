@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Linq;
+using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Media;
 using ReactiveUI;
 using uWidgets.Core;
 using uWidgets.Core.Interfaces;
@@ -30,10 +32,11 @@ public class SettingsViewModel(IAppSettingsProvider appSettingsProvider, IAssemb
 
     public static readonly PageViewModel[] MenuItems =
     [
-        new PageViewModel(typeof(Appearance), nameof(Appearance), Locale.Settings_Appearance),
-        new PageViewModel(typeof(General), nameof(General), Locale.Settings_General),
-        new PageViewModel(typeof(Advanced), nameof(Advanced), Locale.Settings_Advanced),
-        new PageViewModel(typeof(About), nameof(About),  Locale.Settings_About)
+        new PageViewModel(typeof(General), GetIcon(nameof(General)), Locale.Settings_General),
+        new PageViewModel(typeof(Appearance), GetIcon(nameof(Appearance)), Locale.Settings_Appearance),
+        new PageViewModel(typeof(Advanced), GetIcon(nameof(Advanced)), Locale.Settings_Advanced),
+        new PageViewModel(typeof(About), GetIcon(nameof(About)),  Locale.Settings_About),
+        new PageViewModel(null, null, null)
     ];
 
     private readonly PageViewModel[] widgetItems =
@@ -43,17 +46,20 @@ public class SettingsViewModel(IAppSettingsProvider appSettingsProvider, IAssemb
                 group => group.Key, 
                 group => group.MaxBy(assembly => assembly.Version)!)
             .Select(assembly => new PageViewModel(
-                    typeof(Gallery), null, assembly.Value.DisplayName, assembly.Value 
+                    typeof(Gallery), StreamGeometry.Parse(assembly.Value.IconData), assembly.Value.DisplayName, assembly.Value 
                     ))
+            .OrderBy(page => page.Text)
             .ToArray();
+
+    private static StreamGeometry? GetIcon(string name) =>
+        (StreamGeometry?)(Application.Current!.TryFindResource(name, out var icon) ? icon : null);
 
     public void SetCurrentPage(PageViewModel? value)
     {
-        CurrentPage = value?.Type != null
-            ? value.AssemblyInfo == null
-                ? (UserControl?)Activator.CreateInstance(value.Type, appSettingsProvider)
-                : new Gallery(appSettingsProvider, layoutProvider, assemblyProvider, value.AssemblyInfo, widgetFactory)
-            : null;
+        if (value?.Type == null) return;
+        CurrentPage = value.AssemblyInfo == null
+            ? (UserControl?)Activator.CreateInstance(value.Type, appSettingsProvider)
+            : new Gallery(appSettingsProvider, layoutProvider, assemblyProvider, value.AssemblyInfo, widgetFactory);
         CurrentPageTitle = value?.Text;
     }
 }

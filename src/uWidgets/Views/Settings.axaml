@@ -29,7 +29,7 @@
                         <ListBox Name="ListBox" Background="Transparent" SelectionMode="Single" ItemsSource="{Binding AllItems}" SelectionChanged="OnMenuItemChanged">
                             <ListBox.ItemTemplate>
                                 <DataTemplate DataType="viewModels:PageViewModel">
-                                    <StackPanel Orientation="Horizontal" Spacing="12">
+                                    <StackPanel Orientation="Horizontal" Spacing="12" IsVisible="{Binding IsNotSeparator}">
                                         <PathIcon Data="{Binding Icon}" Height="16" />
                                         <TextBlock Text="{Binding Text}" />
                                     </StackPanel>
