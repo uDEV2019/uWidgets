@@ -30,7 +30,7 @@
     </Window.ContextMenu> 
     
     <Window.Styles>
-        <Style Selector="Border ScrollViewer">
+        <Style Selector="Border:not(:pointerover) ScrollViewer">
             <Setter Property="VerticalScrollBarVisibility" Value="Hidden" />
             <Setter Property="HorizontalScrollBarVisibility" Value="Hidden" />
         </Style>
