@@ -21,8 +21,8 @@ public class OpenMeteoWeatherProvider
                       $"longitude={longitudeString}&" +
                       $"temperature_unit={temperatureUnit}&" +
                       $"current=temperature_2m,weathercode&" +
-                      $"hourly=temperature_2m,weathercode&" +
-                      $"daily=temperature_2m_min,temperature_2m_max,weathercode&" +
+                      $"hourly=temperature_2m,weathercode,uv_index,is_day&" +
+                      $"daily=temperature_2m_min,temperature_2m_max,weathercode,sunrise,sunset&" +
                       $"timezone=auto";
             
             var response = await httpClient.GetAsync(url);

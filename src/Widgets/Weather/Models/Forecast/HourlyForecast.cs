@@ -9,7 +9,13 @@ public class HourlyForecast
 
     [JsonPropertyName("temperature_2m")] 
     public List<double> Temperature { get; set; }
+    
+    [JsonPropertyName("uv_index")]
+    public List<double> UVIndex { get; set; }
 
     [JsonPropertyName("weathercode")] 
     public List<WeatherCode> WeatherCode { get; set; }
+    
+    [JsonPropertyName("is_day")]
+    public List<int> IsDay { get; set; }
 }

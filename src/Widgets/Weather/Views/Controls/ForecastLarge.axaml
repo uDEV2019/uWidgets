@@ -32,7 +32,7 @@
             <ItemsControl ItemsSource="{Binding HourlyForecast}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate DataType="viewModels:HourlyForecastViewModel">
-                        <Grid RowDefinitions="*,*,*" Margin="16 0">
+                        <Grid RowDefinitions="*,*,*" MinWidth="57">
                             <TextBlock Grid.Row="0" Text="{Binding Time}" Opacity="0.5" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="SemiBold" />
                             <PathIcon Grid.Row="1" HorizontalAlignment="Center"
                                       Foreground="{DynamicResource SystemControlForegroundAccentBrush}" 

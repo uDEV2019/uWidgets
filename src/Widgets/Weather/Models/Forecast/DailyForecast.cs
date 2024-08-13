@@ -15,4 +15,10 @@ public class DailyForecast
 
     [JsonPropertyName("weathercode")] 
     public List<WeatherCode> WeatherCode { get; set; }
+    
+    [JsonPropertyName("sunrise")]
+    public List<DateTime> Sunrise { get; set; }
+    
+    [JsonPropertyName("sunset")]
+    public List<DateTime> Sunset { get; set; }
 }

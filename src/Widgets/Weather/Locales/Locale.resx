@@ -129,4 +129,10 @@
     <data name="Weather_Temperature_Subtitle" xml:space="preserve">
         <value>See the current temperature for your location</value>
     </data>
+    <data name="Weather_UVIndex_Title" xml:space="preserve">
+        <value>UV Index</value>
+    </data>
+    <data name="Weather_UVIndex_Subtitle" xml:space="preserve">
+        <value>See the current UV index for your location</value>
+    </data>
 </root>

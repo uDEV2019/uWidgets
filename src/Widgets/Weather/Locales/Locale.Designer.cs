@@ -391,5 +391,23 @@ namespace Weather.Locales {
                 return ResourceManager.GetString("Weather_Units_Fahrenheit", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to See the current UV index for your location.
+        /// </summary>
+        public static string Weather_UVIndex_Subtitle {
+            get {
+                return ResourceManager.GetString("Weather_UVIndex_Subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to UV Index.
+        /// </summary>
+        public static string Weather_UVIndex_Title {
+            get {
+                return ResourceManager.GetString("Weather_UVIndex_Title", resourceCulture);
+            }
+        }
     }
 }

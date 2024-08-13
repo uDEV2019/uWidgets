@@ -44,6 +44,12 @@ public class ForecastViewModel : ReactiveObject, IDisposable
             (forecast.Daily.Max[0] - forecast.Daily.Min[0]) * 21,
             42
         ];
+        UVIndexDashArray =
+        [
+            forecast.Hourly.UVIndex[currentHour] / 10 * 21,
+            42
+        ];
+        UVIndex = $"{forecast.Hourly.UVIndex[currentHour]:0}";
         HourlyForecast = Enumerable
             .Range(currentHour, forecast.Hourly.Temperature.Count - currentHour)
             .Select(hour => GetHourlyForecast(forecast, hour % 24));
@@ -78,7 +84,7 @@ public class ForecastViewModel : ReactiveObject, IDisposable
     {
         var time = hour.ToString();
         var code = forecast.Hourly.WeatherCode[hour];
-        var icon = WeatherIconProvider.GetIcon(code);
+        var icon = forecast.Hourly.IsDay[hour] > 0 ? WeatherIconProvider.GetIcon(code) : WeatherIcon.Night;
         var temperature = forecast.Hourly.Temperature[hour];
 
         return new HourlyForecastViewModel(time, icon, $"{temperature:0}°");
@@ -157,6 +163,21 @@ public class ForecastViewModel : ReactiveObject, IDisposable
     {
         get => currentTemperatureDashArray;
         private set => this.RaiseAndSetIfChanged(ref currentTemperatureDashArray, value);
+    }
+
+    private AvaloniaList<double> uvIndexDashArray = [0, 42];
+    public AvaloniaList<double> UVIndexDashArray
+    {
+        get => uvIndexDashArray;
+        private set => this.RaiseAndSetIfChanged(ref uvIndexDashArray, value);
+    }
+
+    private string uvIndex;
+    
+    public string UVIndex
+    {
+        get => uvIndex;
+        private set => this.RaiseAndSetIfChanged(ref uvIndex, value);
     }
 
     public void Dispose()
