@@ -116,4 +116,10 @@
     <data name="Weather_Units_Fahrenheit" xml:space="preserve">
         <value>Фаренгейт</value>
     </data>
+    <data name="Weather_Temperature_Title" xml:space="preserve">
+        <value>Температура</value>
+    </data>
+    <data name="Weather_Temperature_Subtitle" xml:space="preserve">
+        <value>Смотрите текущую температуру для местоположения</value>
+    </data>
 </root>

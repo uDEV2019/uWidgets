@@ -60,14 +60,21 @@
             <ItemsControl ItemsSource="{Binding DailyForecast}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate DataType="viewModels:DailyForecastViewModel">
-                        <Grid ColumnDefinitions="60,Auto,60,*,Auto" Margin="0 7">
+                        <Grid ColumnDefinitions="60,Auto,60,*,25" Margin="0 7">
                             <TextBlock Grid.Column="0" Text="{Binding DayOfWeek}" HorizontalAlignment="Left" FontWeight="Bold" />
                             <PathIcon Grid.Column="1" HorizontalAlignment="Center"
                                       Margin="0 -2 0 0"
                                       Foreground="{DynamicResource SystemControlForegroundAccentBrush}" 
                                       Data="{Binding Icon}" />
                             <TextBlock Grid.Column="2" Text="{Binding Min}" Opacity="0.5" HorizontalAlignment="Right" FontWeight="Bold" />
-                            <TextBlock Grid.Column="4" Text="{Binding Max}" HorizontalAlignment="Center" FontWeight="Bold" />
+                            <Path Grid.Column="3" Margin="10 4 10 0" 
+                                  Height="5" Stretch="Fill" Opacity="0.2" StrokeThickness="5" StrokeLineCap="Round"
+                                  Stroke="{DynamicResource SystemControlForegroundBaseHighBrush}" >
+                                <Path.Data>
+                                    <LineGeometry StartPoint="0,0" EndPoint="1,0"/>
+                                </Path.Data>
+                            </Path>
+                            <TextBlock Grid.Column="4" Text="{Binding Max}" HorizontalAlignment="Right" FontWeight="Bold" />
                         </Grid>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>

@@ -33,6 +33,9 @@ public class ForecastViewModel : ReactiveObject, IDisposable
         CurrentIcon = WeatherIconProvider.GetIcon(forecast.Current.WeatherCode);
         CurrentCondition = GetCondition(forecast.Current.WeatherCode);
         CurrentMinMax = $"{forecast.Daily.Max[0]:0}°  {forecast.Daily.Min[0]:0}°";
+        CurrentMin = $"{forecast.Daily.Min[0]:0}";
+        CurrentMax = $"{forecast.Daily.Max[0]:0}";
+        Current = $"{forecast.Current.Temperature:0}";
         HourlyForecast = Enumerable
             .Range(currentHour, forecast.Hourly.Temperature.Count - currentHour)
             .Select(hour => GetHourlyForecast(forecast, hour % 24));
@@ -107,6 +110,28 @@ public class ForecastViewModel : ReactiveObject, IDisposable
     {
         get => currentMinMax;
         private set => this.RaiseAndSetIfChanged(ref currentMinMax, value);
+    }
+    
+        
+    private string? currentMin = "--";
+    public string? CurrentMin
+    {
+        get => currentMin;
+        private set => this.RaiseAndSetIfChanged(ref currentMin, value);
+    }
+    
+    private string? currentMax = "--";
+    public string? CurrentMax
+    {
+        get => currentMax;
+        private set => this.RaiseAndSetIfChanged(ref currentMax, value);
+    }
+
+    private string? current = "--";
+    public string? Current
+    {
+        get => current;
+        private set => this.RaiseAndSetIfChanged(ref current, value);
     }
 
     public void Dispose()

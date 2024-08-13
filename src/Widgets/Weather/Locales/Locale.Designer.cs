@@ -348,6 +348,24 @@ namespace Weather.Locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to See the current temperature for your location.
+        /// </summary>
+        public static string Weather_Temperature_Subtitle {
+            get {
+                return ResourceManager.GetString("Weather_Temperature_Subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Temperature.
+        /// </summary>
+        public static string Weather_Temperature_Title {
+            get {
+                return ResourceManager.GetString("Weather_Temperature_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Temperature.
         /// </summary>
         public static string Weather_Units {
