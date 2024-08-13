@@ -6,12 +6,23 @@
              Margin="6">
     <Viewbox Stretch="Uniform">
         <Canvas Width="110" Height="110">
-            <Path StrokeThickness="10" StrokeDashArray="31.4,31.4" StrokeLineCap="Round"
-                  StrokeDashOffset="10" Opacity="0.2"
+            <Path StrokeThickness="10" StrokeDashArray="21,21" StrokeLineCap="Round"
+                  Opacity="0.2"
                   Stroke="{DynamicResource SystemControlForegroundBaseHighBrush}"
                   RenderTransformOrigin="55,55">
                 <Path.RenderTransform>
-                    <RotateTransform Angle="147" />
+                    <RotateTransform Angle="149" />
+                </Path.RenderTransform>
+                <Path.Data>
+                    <EllipseGeometry Center="55,55" RadiusX="50" RadiusY="50" />
+                </Path.Data>
+            </Path>
+            <Path StrokeThickness="10" StrokeLineCap="Round"
+                  StrokeDashArray="{Binding CurrentTemperatureDashArray}"
+                  Stroke="{DynamicResource SystemControlForegroundBaseHighBrush}"
+                  RenderTransformOrigin="55,55">
+                <Path.RenderTransform>
+                    <RotateTransform Angle="149" />
                 </Path.RenderTransform>
                 <Path.Data>
                     <EllipseGeometry Center="55,55" RadiusX="50" RadiusY="50" />

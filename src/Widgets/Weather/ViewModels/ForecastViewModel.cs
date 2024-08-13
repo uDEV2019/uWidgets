@@ -1,3 +1,4 @@
+using Avalonia.Collections;
 using Avalonia.Controls;
 using Avalonia.Media;
 using ReactiveUI;
@@ -37,6 +38,12 @@ public class ForecastViewModel : ReactiveObject, IDisposable
         CurrentMin = $"{forecast.Daily.Min[0]:0}";
         CurrentMax = $"{forecast.Daily.Max[0]:0}";
         Current = $"{forecast.Current.Temperature:0}";
+        CurrentTemperatureDashArray =
+        [
+            (forecast.Current.Temperature - forecast.Daily.Min[0]) /
+            (forecast.Daily.Max[0] - forecast.Daily.Min[0]) * 21,
+            42
+        ];
         HourlyForecast = Enumerable
             .Range(currentHour, forecast.Hourly.Temperature.Count - currentHour)
             .Select(hour => GetHourlyForecast(forecast, hour % 24));
@@ -143,6 +150,13 @@ public class ForecastViewModel : ReactiveObject, IDisposable
     {
         get => current;
         private set => this.RaiseAndSetIfChanged(ref current, value);
+    }
+
+    private AvaloniaList<double> currentTemperatureDashArray = [0,42];
+    public AvaloniaList<double> CurrentTemperatureDashArray
+    {
+        get => currentTemperatureDashArray;
+        private set => this.RaiseAndSetIfChanged(ref currentTemperatureDashArray, value);
     }
 
     public void Dispose()
