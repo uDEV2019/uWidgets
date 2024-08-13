@@ -1,6 +1,6 @@
 ## uWidgets
-<img src=".github/images/icon-light.png#gh-light-mode-only" width="104" alt="Logo" align="left">
-<img src=".github/images/icon-dark.png#gh-dark-mode-only" width="104" alt="Logo" align="left">
+<img src=".github/images/icon-light.png#gh-light-mode-only" width="106" alt="Logo" align="left">
+<img src=".github/images/icon-dark.png#gh-dark-mode-only" width="106" alt="Logo" align="left">
 
 <p align="center">
   Standalone .NET application with a&nbsp;variety of&nbsp;customizable widgets.
@@ -21,21 +21,49 @@
 
 ## Features
 
-### Widgets
-
-<img src=".github/images/widget-line-light.png#gh-light-mode-only">
-<img src=".github/images/widget-line-dark.png#gh-dark-mode-only">
-
 6 types of fully customizable widgets
 
-| Widget | Views | Features |
-|:-:|:-|:-|
-|**🕒<br>Clock**| <li> 3 × Analog clock <li> Digital Clock <li> World Clock | <li> Timezones support <li> Show/hide seconds |
-|**📅<br>Calendar**| <li> Day View <li> Month View | <li> Change first day of week |
-|**🗒️<br>Notes**| <li> Note | <li> Interactive text note |
-|**✅<br>Reminders**| <li> List | <li> Interactive to-do list |
-|**⛅️<br>Weather**| <li> Forecast | <li> Forecast up to 7 days <li> Search city by name |
-|**📊<br>Monitor**| <li> Single Metric | <li> CPU usage <li> RAM usage <li> Disk usage <li> Network usage <li> Battery level |
+<img src=".github/images/clock-light.png#gh-light-mode-only" width="106" alt="Clock" align="left">
+<img src=".github/images/clock-dark.png#gh-dark-mode-only" width="106" alt="Clock" align="left">
+
+### Clock
+**Views**: 3 styles of Analog Clock, Digital Clock, World Clock <br>
+**Features**: Timezone selector, 12/24 hour modes, Show/hide seconds
+
+<img src=".github/images/calendar-light.png#gh-light-mode-only" width="106" alt="Calendar" align="left">
+<img src=".github/images/calendar-dark.png#gh-dark-mode-only" width="106" alt="Calendar" align="left">
+
+### Calendar
+**Views**: Day View, Month View <br>
+**Features**: First day of week selector
+
+<img src=".github/images/notes-light.png#gh-light-mode-only" width="106" alt="Notes" align="left">
+<img src=".github/images/notes-dark.png#gh-dark-mode-only" width="106" alt="Notes" align="left">
+
+### Notes
+**Views**: Note <br>
+**Features**: Interactive text node, custom header
+
+<img src=".github/images/reminders-light.png#gh-light-mode-only" width="106" alt="Reminders" align="left">
+<img src=".github/images/reminders-dark.png#gh-dark-mode-only" width="106" alt="Reminders" align="left">
+
+### Reminders
+**Views**: List <br>
+**Features**: Interactive to-do list, custom header, automatic items counter
+
+<img src=".github/images/weather-light.png#gh-light-mode-only" width="106" alt="Weather" align="left">
+<img src=".github/images/weather-dark.png#gh-dark-mode-only" width="106" alt="Weather" align="left">
+
+### Weather
+**Views**: Forecast <br>
+**Features**: Forecast up to 7 days, Search city by name
+
+<img src=".github/images/monitor-light.png#gh-light-mode-only" width="106" alt="Monitor" align="left">
+<img src=".github/images/monitor-dark.png#gh-dark-mode-only" width="106" alt="Monitor" align="left">
+
+### Monitor
+**Views**: Single Metric <br>
+**Features**: CPU usage, RAM usage, Disk usage, Network usage, Battery level
 
 ### Themes
 
@@ -47,38 +75,26 @@
 
 - 🔲 **Monochrome** theme
 
-### Grid
-
-Widgets are designed to snap their **position** and **size** to the virtual grid.<br/>
-You can change the grid cell **size** and **margin** between widgets, or disable the grid completely.
+<img src=".github/images/sizes-light.png#gh-light-mode-only" width="50%" alt="Weather" align="right">
+<img src=".github/images/sizes-dark.png#gh-dark-mode-only" width="50%" alt="Weather" align="right">
 
 ### Sizes
 
 You can set size of each individual widget.
 There are 4 presets:
 
-<kbd align="center">
-  <br/><br/>
-  <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Extra Large&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><br/><br/>
-  8×4
-  <br/><br/><br/>
-</kbd>
-<kbd align="center">
-  <br/><br/>
-  <b>&nbsp;&nbsp;&nbsp;Large&nbsp;&nbsp;&nbsp;</b><br/><br/>
-  4×4
-  <br/><br/><br/>
-</kbd>
-<kbd align="center">
-  <b>&nbsp;&nbsp;Medium&nbsp;&nbsp;</b><br/><br/>
-  4×2
-</kbd>
-<kbd align="center">
-  <b>Small</b><br/><br/>
-  2×2
-</kbd>
+- Small (2×2)
+- Medium (4×2)
+- Large (4×4)
+- Extra Large (8×4)
 
 You can also resize the widget by it's corner to set the desired size manually.
+
+### Grid
+
+Widgets are designed to snap their **position** and **size** to the virtual grid.
+
+You can change the grid cell **size** and **margin** between widgets, or disable the grid completely.
 
 ### Languages
 <kbd align="center">
