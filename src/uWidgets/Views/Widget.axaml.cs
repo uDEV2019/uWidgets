@@ -33,16 +33,16 @@ public partial class Widget : Window
         this.userControl = userControl;
         this.appSettingsProvider = appSettingsProvider;
         this.gridService = gridService;
+        
         InitializeComponent();
         
         Height = widgetLayoutProvider.Get().Height;
         Width = widgetLayoutProvider.Get().Width;
-        Position = new PixelPoint(widgetLayoutProvider.Get().X, widgetLayoutProvider.Get().Y);
         Title = $"{widgetLayoutProvider.Get().Type} {widgetLayoutProvider.Get().SubType}";
         ContentPresenter.Content = userControl();
         DataContext = this;
         
-        Activated += (_, _) => InteropService.RemoveWindowFromAltTab(this);
+        Activated += OnActivated;
         RenderOptions.SetTextRenderingMode(this, TextRenderingMode.Antialias);
         
         PointerPressed += OnPointerPressed;
@@ -51,7 +51,14 @@ public partial class Widget : Window
         appSettingsProvider.DataChanged += MoveResize;
         Unloaded += OnUnloaded;
     }
-    
+
+    private void OnActivated(object? sender, EventArgs e)
+    {
+        Position = new PixelPoint(widgetLayoutProvider.Get().X, widgetLayoutProvider.Get().Y);
+        Scale();
+        InteropService.RemoveWindowFromAltTab(this);
+    }
+
     public bool ShowEditButton => editWidgetWindow != null;
     public string Edit => $"{Locale.Widget_Edit} \"{widgetLayoutProvider.Get().Type}\"";
     public CornerRadius Radius => new(appSettingsProvider.Get().Dimensions.Radius / (Screens.ScreenFromWindow(this)?.Scaling ?? 1.0));
@@ -86,6 +93,7 @@ public partial class Widget : Window
     {
         PointerPressed -= OnPointerPressed;
         PointerReleased -= OnPointerReleased;
+        Activated -= OnActivated;
         Unloaded -= OnUnloaded;
         widgetLayoutProvider.DataChanged -= UpdateControl;
         appSettingsProvider.DataChanged -= MoveResize;
