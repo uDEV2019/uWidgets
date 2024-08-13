@@ -1,3 +1,4 @@
+using Avalonia.Controls;
 using Avalonia.Media;
 using ReactiveUI;
 using uWidgets.Services;
@@ -52,8 +53,18 @@ public class ForecastViewModel : ReactiveObject, IDisposable
         var icon = WeatherIconProvider.GetIcon(code);
         var min = forecast.Daily.Min[day];
         var max = forecast.Daily.Max[day];
+
+        var totalMin = forecast.Daily.Min.Min();
+        var totalMax = forecast.Daily.Max.Max();
         
-        return new DailyForecastViewModel(dayOfWeekName, icon, $"{min:0}°", $"{max:0}°");
+        List<GridLength> graph =
+        [
+            new GridLength(min - totalMin, GridUnitType.Star),
+            new GridLength(max - min, GridUnitType.Star),
+            new GridLength(totalMax - max, GridUnitType.Star),
+        ];
+        
+        return new DailyForecastViewModel(dayOfWeekName, icon, $"{min:0}°", $"{max:0}°", graph);
     }
 
     private HourlyForecastViewModel GetHourlyForecast(ForecastResponse forecast, int hour)
