@@ -28,11 +28,11 @@
                 <LineGeometry StartPoint="0,0" EndPoint="1,0"/>
             </Path.Data>
         </Path>
-        <ScrollViewer Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Visible">
+        <ScrollViewer Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2">
             <ItemsControl ItemsSource="{Binding HourlyForecast}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate DataType="viewModels:HourlyForecastViewModel">
-                        <Grid RowDefinitions="*,*,*" Margin="15 0">
+                        <Grid RowDefinitions="*,*,*" Margin="16 0">
                             <TextBlock Grid.Row="0" Text="{Binding Time}" Opacity="0.5" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="SemiBold" />
                             <PathIcon Grid.Row="1" HorizontalAlignment="Center"
                                       Foreground="{DynamicResource SystemControlForegroundAccentBrush}" 
@@ -56,11 +56,11 @@
                 <LineGeometry StartPoint="0,0" EndPoint="1,0"/>
             </Path.Data>
         </Path>
-        <ScrollViewer Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" VerticalScrollBarVisibility="Visible">
+        <ScrollViewer Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2">
             <ItemsControl ItemsSource="{Binding DailyForecast}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate DataType="viewModels:DailyForecastViewModel">
-                        <Grid ColumnDefinitions="57,Auto,58,*,Auto" Margin="0 6">
+                        <Grid ColumnDefinitions="60,Auto,60,*,Auto" Margin="0 7">
                             <TextBlock Grid.Column="0" Text="{Binding DayOfWeek}" HorizontalAlignment="Left" FontWeight="Bold" />
                             <PathIcon Grid.Column="1" HorizontalAlignment="Center"
                                       Margin="0 -2 0 0"
