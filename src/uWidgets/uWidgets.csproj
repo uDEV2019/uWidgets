@@ -12,6 +12,7 @@
         <PublishReadyToRun>true</PublishReadyToRun>
         <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
         <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+        <ApplicationIcon>..\..\.github\images\icon.ico</ApplicationIcon>
     </PropertyGroup>
 
     <ItemGroup>
@@ -46,6 +47,9 @@
       </None>
       <None Update="layout.json">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Include="..\..\.github\images\icon.ico">
+        <Link>icon.ico</Link>
       </None>
     </ItemGroup>
 
