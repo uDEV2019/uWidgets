@@ -1,24 +1,22 @@
 ## uWidgets
-<img src=".github/images/icon-light.png#gh-light-mode-only" width="106" alt="Logo" align="left">
-<img src=".github/images/icon-dark.png#gh-dark-mode-only" width="106" alt="Logo" align="left">
 
-<p align="center">
-  Standalone .NET application with a&nbsp;variety of&nbsp;customizable widgets.
-</p>
+<img src=".github/images/icon-light.png#gh-light-mode-only" width="106" alt="Logo" align="right">
+<img src=".github/images/icon-dark.png#gh-dark-mode-only" width="106" alt="Logo" align="right">
+
 <div align="center">
+  Standalone .NET application with a&nbsp;variety of&nbsp;customizable widgets.
+</div>
+<h3 align="center">
   <b><a href="https://github.com/creewick/uWidgets/releases">Download</a></b> ・
   <a href="https://github.com/users/creewick/projects/4">Roadmap</a> ・
   <a href="https://github.com/creewick/uWidgets/wiki/API">API</a> ・
   <a href="https://github.com/creewick/uWidgets/discussions">Discussions</a> ・
   <a href="https://github.com/creewick/uWidgets/issues">Report a bug</a>
-</div>
-<br/>
+</h3>
 <div align="center">
   <img src="https://img.shields.io/github/downloads/creewick/uWidgets/total"/>
-  <img src="https://img.shields.io/github/stars/creewick/uWidgets?style=flat"/>
-  <img src="https://img.shields.io/github/watchers/creewick/uWidgets?style=flat"/>
-  <img src="https://img.shields.io/github/contributors/creewick/uWidgets"/>
   <img src="https://img.shields.io/github/v/tag/creewick/uWidgets?label=version"/>
+  <img src="https://img.shields.io/github/stars/creewick/uWidgets?style=flat"/>
 </div>
 
 ## Features
@@ -164,12 +162,18 @@ You can change the grid cell **size** and **margin** between widgets, or disable
 
 The app's portable and doesn't store any data outside that folder
 
-## Collaboration
+## Contributing
 
 uWidgets is built with modularity in mind.<br/>
 That means you can create your own widgets using C#.
 
 Check the [API Reference](https://github.com/creewick/uWidgets/wiki/API)
+
+### Contributors
+
+<a href = "https://github.com/creewick/uWidgets/graphs/contributors">
+  <img src = "https://contrib.rocks/image?repo=creewick/uWidgets" />
+</a>
 
 ## License
 
