@@ -1,6 +1,7 @@
 ## uWidgets
 
-<img src=".github/images/icon.png" width="106" alt="Logo" align="right">
+<img src=".github/images/icon-light.png#gh-light-mode-only" width="120" alt="Logo" align="right">
+<img src=".github/images/icon-dark.png#gh-dark-mode-only" width="120" alt="Logo" align="right">
 
 <div align="center">
   Standalone .NET application with a&nbsp;variety of&nbsp;customizable widgets.
@@ -22,43 +23,43 @@
 
 6 types of fully customizable widgets
 
-<img src=".github/images/clock-light.png#gh-light-mode-only" width="106" alt="Clock" align="left">
-<img src=".github/images/clock-dark.png#gh-dark-mode-only" width="106" alt="Clock" align="left">
+<img src=".github/images/clock-light.png#gh-light-mode-only" width="100" alt="Clock" align="left">
+<img src=".github/images/clock-dark.png#gh-dark-mode-only" width="100" alt="Clock" align="left">
 
 ### Clock
 **Views**: 3 styles of Analog Clock, Digital Clock, World Clock <br>
 **Features**: Timezone selector, 12/24 hour modes, Show/hide seconds
 
-<img src=".github/images/calendar-light.png#gh-light-mode-only" width="106" alt="Calendar" align="left">
-<img src=".github/images/calendar-dark.png#gh-dark-mode-only" width="106" alt="Calendar" align="left">
+<img src=".github/images/calendar-light.png#gh-light-mode-only" width="100" alt="Calendar" align="left">
+<img src=".github/images/calendar-dark.png#gh-dark-mode-only" width="100" alt="Calendar" align="left">
 
 ### Calendar
 **Views**: Day View, Month View <br>
 **Features**: First day of week selector
 
-<img src=".github/images/notes-light.png#gh-light-mode-only" width="106" alt="Notes" align="left">
-<img src=".github/images/notes-dark.png#gh-dark-mode-only" width="106" alt="Notes" align="left">
+<img src=".github/images/notes-light.png#gh-light-mode-only" width="100" alt="Notes" align="left">
+<img src=".github/images/notes-dark.png#gh-dark-mode-only" width="100" alt="Notes" align="left">
 
 ### Notes
 **Views**: Note <br>
 **Features**: Interactive text node, custom header
 
-<img src=".github/images/reminders-light.png#gh-light-mode-only" width="106" alt="Reminders" align="left">
-<img src=".github/images/reminders-dark.png#gh-dark-mode-only" width="106" alt="Reminders" align="left">
+<img src=".github/images/reminders-light.png#gh-light-mode-only" width="100" alt="Reminders" align="left">
+<img src=".github/images/reminders-dark.png#gh-dark-mode-only" width="100" alt="Reminders" align="left">
 
 ### Reminders
 **Views**: List <br>
 **Features**: Interactive to-do list, custom header, automatic items counter
 
-<img src=".github/images/weather-light.png#gh-light-mode-only" width="106" alt="Weather" align="left">
-<img src=".github/images/weather-dark.png#gh-dark-mode-only" width="106" alt="Weather" align="left">
+<img src=".github/images/weather-light.png#gh-light-mode-only" width="100" alt="Weather" align="left">
+<img src=".github/images/weather-dark.png#gh-dark-mode-only" width="100" alt="Weather" align="left">
 
 ### Weather
 **Views**: Forecast, Temperature, UV Index <br>
 **Features**: Forecast up to 7 days, Search city by name
 
-<img src=".github/images/monitor-light.png#gh-light-mode-only" width="106" alt="Monitor" align="left">
-<img src=".github/images/monitor-dark.png#gh-dark-mode-only" width="106" alt="Monitor" align="left">
+<img src=".github/images/monitor-light.png#gh-light-mode-only" width="100" alt="Monitor" align="left">
+<img src=".github/images/monitor-dark.png#gh-dark-mode-only" width="100" alt="Monitor" align="left">
 
 ### Monitor
 **Views**: Single Metric <br>
