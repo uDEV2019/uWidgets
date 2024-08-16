@@ -1,7 +1,6 @@
 ## uWidgets
 
-<img src=".github/images/icon-light.png#gh-light-mode-only" width="106" alt="Logo" align="right">
-<img src=".github/images/icon-dark.png#gh-dark-mode-only" width="106" alt="Logo" align="right">
+<img src=".github/images/icon.png" width="106" alt="Logo" align="right">
 
 <div align="center">
   Standalone .NET application with a&nbsp;variety of&nbsp;customizable widgets.
