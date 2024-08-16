@@ -16,6 +16,8 @@
 <div align="center">
   <img src="https://img.shields.io/github/downloads/creewick/uWidgets/total"/>
   <img src="https://img.shields.io/github/stars/creewick/uWidgets?style=flat"/>
+  <img src="https://img.shields.io/github/watchers/creewick/uWidgets?style=flat"/>
+  <img src="https://img.shields.io/github/contributors/creewick/uWidgets"/>
   <img src="https://img.shields.io/github/v/tag/creewick/uWidgets?label=version"/>
 </div>
 
