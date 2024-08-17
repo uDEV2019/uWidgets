@@ -75,7 +75,7 @@
 
 - ☀️ **Light** and 🌑 **Dark** theme support
   
-- 🫧 **Transparency** effects
+- 💧 **Transparency** effects
 
 - 🎨 **Accent** color picker
 
