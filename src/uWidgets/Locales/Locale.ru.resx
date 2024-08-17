@@ -29,7 +29,7 @@
     <data name="Settings_Appearance_DarkMode_True" xml:space="preserve">
         <value>Темный</value>
     </data>
-    <data name="Settings_Appearance_Size" xml:space="preserve">
+    <data name="Settings_Advanced_Size" xml:space="preserve">
         <value>Размер</value>
     </data>
     <data name="Settings_Appearance_Theme" xml:space="preserve">
@@ -134,10 +134,10 @@
     <data name="Widgets" xml:space="preserve">
         <value>Виджеты</value>
     </data>
-    <data name="Settings_Appearance_SnapPosition_Subtitle" xml:space="preserve">
+    <data name="Settings_Advanced_SnapPosition_Subtitle" xml:space="preserve">
         <value>Выравнивать положение виджета по сетке</value>
     </data>
-    <data name="Settings_Appearance_SnapPosition_Title" xml:space="preserve">
+    <data name="Settings_Advanced_SnapPosition_Title" xml:space="preserve">
         <value>Положение по сетке </value>
     </data>
     <data name="Widget_Save" xml:space="preserve">
@@ -179,25 +179,25 @@
     <data name="Settings_General_Startup" xml:space="preserve">
         <value>Запуск</value>
     </data>
-    <data name="Settings_Appearance_SnapSize_Title" xml:space="preserve">
+    <data name="Settings_Advanced_SnapSize_Title" xml:space="preserve">
         <value>Размер по сетке</value>
     </data>
-    <data name="Settings_Appearance_SnapSize_Subtitle" xml:space="preserve">
+    <data name="Settings_Advanced_SnapSize_Subtitle" xml:space="preserve">
         <value>Выравнивать размер виджета по сетке</value>
     </data>
-    <data name="Settings_Appearance_LockSize_Title" xml:space="preserve">
+    <data name="Settings_Advanced_LockSize_Title" xml:space="preserve">
         <value>Блокировка размера</value>
     </data>
-    <data name="Settings_Appearance_LockPosition_Title" xml:space="preserve">
+    <data name="Settings_Advanced_LockPosition_Title" xml:space="preserve">
         <value>Блокировка положения</value>
     </data>
-    <data name="Settings_Appearance_LockSize_Subtitle" xml:space="preserve">
+    <data name="Settings_Advanced_LockSize_Subtitle" xml:space="preserve">
         <value>Запретить изменение размера виджета</value>
     </data>
-    <data name="Settings_Appearance_LockPosition_Subtitle" xml:space="preserve">
+    <data name="Settings_Advanced_LockPosition_Subtitle" xml:space="preserve">
         <value>Запретить изменение положения виджета</value>
     </data>
-    <data name="Settings_Appearance_Position" xml:space="preserve">
+    <data name="Settings_Advanced_Position" xml:space="preserve">
         <value>Положение</value>
     </data>
     <data name="Settings_Advanced" xml:space="preserve">
@@ -217,5 +217,32 @@
     </data>
     <data name="Settings_Advanced_WidgetRadius_Title" xml:space="preserve">
         <value>Радиус виджета</value>
+    </data>
+    <data name="Settings_Appearance_Presets" xml:space="preserve">
+        <value>Шаблоны</value>
+    </data>
+    <data name="Settings_Appearance_Presets_Windows_Title" xml:space="preserve">
+        <value>Windows</value>
+    </data>
+    <data name="Settings_Appearance_Presets_Windows_Subtitle" xml:space="preserve">
+        <value>Segoe UI, острые углы, нативная рамка окна</value>
+    </data>
+    <data name="Settings_Appearance_Presets_Apply" xml:space="preserve">
+        <value>Применить</value>
+    </data>
+    <data name="Settings_Appearance_Presets_Apple_Title" xml:space="preserve">
+        <value>Apple</value>
+    </data>
+    <data name="Settings_Appearance_Presets_Apple_Subtitle" xml:space="preserve">
+        <value>Inter, круглые углы, без рамки и тени</value>
+    </data>
+    <data name="Settings_Advanced_Font" xml:space="preserve">
+        <value>Шрифт</value>
+    </data>
+    <data name="Settings_Advanced_FontFamily_Title" xml:space="preserve">
+        <value>Шрифт</value>
+    </data>
+    <data name="Settings_Advanced_FontFamily_Subtitle" xml:space="preserve">
+        <value>Шрифт виджетов</value>
     </data>
 </root>

@@ -54,7 +54,7 @@
     <data name="Settings_Appearance_AccentColor_Title" xml:space="preserve">
         <value>Accent color</value>
     </data>
-    <data name="Settings_Appearance_Size" xml:space="preserve">
+    <data name="Settings_Advanced_Size" xml:space="preserve">
         <value>Size</value>
     </data>
     <data name="Settings_Advanced_WidgetSize_Title" xml:space="preserve">
@@ -141,10 +141,10 @@
     <data name="Widgets" xml:space="preserve">
         <value>Widgets</value>
     </data>
-    <data name="Settings_Appearance_SnapPosition_Title" xml:space="preserve">
+    <data name="Settings_Advanced_SnapPosition_Title" xml:space="preserve">
         <value>Snap position</value>
     </data>
-    <data name="Settings_Appearance_SnapPosition_Subtitle" xml:space="preserve">
+    <data name="Settings_Advanced_SnapPosition_Subtitle" xml:space="preserve">
         <value>Align widget position to grid</value>
     </data>
     <data name="Widget_Save" xml:space="preserve">
@@ -186,25 +186,25 @@
     <data name="Settings_General_Startup" xml:space="preserve">
         <value>Startup</value>
     </data>
-    <data name="Settings_Appearance_SnapSize_Title" xml:space="preserve">
+    <data name="Settings_Advanced_SnapSize_Title" xml:space="preserve">
         <value>Snap size</value>
     </data>
-    <data name="Settings_Appearance_SnapSize_Subtitle" xml:space="preserve">
+    <data name="Settings_Advanced_SnapSize_Subtitle" xml:space="preserve">
         <value>Align widget size to grid</value>
     </data>
-    <data name="Settings_Appearance_LockSize_Title" xml:space="preserve">
+    <data name="Settings_Advanced_LockSize_Title" xml:space="preserve">
         <value>Lock size</value>
     </data>
-    <data name="Settings_Appearance_LockPosition_Title" xml:space="preserve">
+    <data name="Settings_Advanced_LockPosition_Title" xml:space="preserve">
         <value>Lock position</value>
     </data>
-    <data name="Settings_Appearance_LockSize_Subtitle" xml:space="preserve">
+    <data name="Settings_Advanced_LockSize_Subtitle" xml:space="preserve">
         <value>Prevent accidental widget resizing</value>
     </data>
-    <data name="Settings_Appearance_LockPosition_Subtitle" xml:space="preserve">
+    <data name="Settings_Advanced_LockPosition_Subtitle" xml:space="preserve">
         <value>Prevent accidental widget repositioning</value>
     </data>
-    <data name="Settings_Appearance_Position" xml:space="preserve">
+    <data name="Settings_Advanced_Position" xml:space="preserve">
         <value>Position</value>
     </data>
     <data name="Settings_Advanced" xml:space="preserve">
@@ -224,5 +224,32 @@
     </data>
     <data name="Settings_Advanced_Dimensions" xml:space="preserve">
         <value>Dimensions</value>
+    </data>
+    <data name="Settings_Appearance_Presets" xml:space="preserve">
+        <value>Presets</value>
+    </data>
+    <data name="Settings_Appearance_Presets_Windows_Title" xml:space="preserve">
+        <value>Windows</value>
+    </data>
+    <data name="Settings_Appearance_Presets_Windows_Subtitle" xml:space="preserve">
+        <value>Segoe UI, sharp corners, native frame</value>
+    </data>
+    <data name="Settings_Appearance_Presets_Apply" xml:space="preserve">
+        <value>Apply</value>
+    </data>
+    <data name="Settings_Appearance_Presets_Apple_Title" xml:space="preserve">
+        <value>Apple</value>
+    </data>
+    <data name="Settings_Appearance_Presets_Apple_Subtitle" xml:space="preserve">
+        <value>Inter, round corners, no border, no shadow</value>
+    </data>
+    <data name="Settings_Advanced_Font" xml:space="preserve">
+        <value>Font</value>
+    </data>
+    <data name="Settings_Advanced_FontFamily_Title" xml:space="preserve">
+        <value>Font Family</value>
+    </data>
+    <data name="Settings_Advanced_FontFamily_Subtitle" xml:space="preserve">
+        <value>Font family used in widgets</value>
     </data>
 </root>

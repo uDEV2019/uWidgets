@@ -35,6 +35,10 @@ public class ThemeService : IThemeService
             _ => ThemeVariant.Dark,
         };
 
+        Application.Current.Resources["FontFamily"] = theme.FontFamily == "Inter"
+            ? new FontFamily("avares://Avalonia.Fonts.Inter#Inter")
+            : new FontFamily(theme.FontFamily);
+
         if (theme.AccentColor != null && Color.TryParse(theme.AccentColor, out var color))
         {
             Application.Current.Resources["SystemAccentColor"] = color;

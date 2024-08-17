@@ -17,4 +17,10 @@
 /// <param name="Monochrome">
 /// Should the application use monochrome theme
 /// </param>
-public record Theme(bool? DarkMode, string? AccentColor, bool Transparency, bool Monochrome);
+/// <param name="UseNativeFrame">
+/// Should the application use native window frame
+/// </param>
+/// <param name="FontFamily">
+/// Font family to use
+/// </param>
+public record Theme(bool? DarkMode, string? AccentColor, bool Transparency, bool Monochrome, bool UseNativeFrame, string FontFamily);

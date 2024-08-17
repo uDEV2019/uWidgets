@@ -150,6 +150,123 @@ namespace uWidgets.Locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Font.
+        /// </summary>
+        public static string Settings_Advanced_Font {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_Font", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Font family used in widgets.
+        /// </summary>
+        public static string Settings_Advanced_FontFamily_Subtitle {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_FontFamily_Subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Font Family.
+        /// </summary>
+        public static string Settings_Advanced_FontFamily_Title {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_FontFamily_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prevent accidental widget repositioning.
+        /// </summary>
+        public static string Settings_Advanced_LockPosition_Subtitle {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_LockPosition_Subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lock position.
+        /// </summary>
+        public static string Settings_Advanced_LockPosition_Title {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_LockPosition_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prevent accidental widget resizing.
+        /// </summary>
+        public static string Settings_Advanced_LockSize_Subtitle {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_LockSize_Subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lock size.
+        /// </summary>
+        public static string Settings_Advanced_LockSize_Title {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_LockSize_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Position.
+        /// </summary>
+        public static string Settings_Advanced_Position {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_Position", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Size.
+        /// </summary>
+        public static string Settings_Advanced_Size {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_Size", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Align widget position to grid.
+        /// </summary>
+        public static string Settings_Advanced_SnapPosition_Subtitle {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_SnapPosition_Subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Snap position.
+        /// </summary>
+        public static string Settings_Advanced_SnapPosition_Title {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_SnapPosition_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Align widget size to grid.
+        /// </summary>
+        public static string Settings_Advanced_SnapSize_Subtitle {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_SnapSize_Subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Snap size.
+        /// </summary>
+        public static string Settings_Advanced_SnapSize_Title {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_SnapSize_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Minimal distance between widgets.
         /// </summary>
         public static string Settings_Advanced_WidgetMargin_Subtitle {
@@ -285,42 +402,6 @@ namespace uWidgets.Locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Prevent accidental widget repositioning.
-        /// </summary>
-        public static string Settings_Appearance_LockPosition_Subtitle {
-            get {
-                return ResourceManager.GetString("Settings_Appearance_LockPosition_Subtitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Lock position.
-        /// </summary>
-        public static string Settings_Appearance_LockPosition_Title {
-            get {
-                return ResourceManager.GetString("Settings_Appearance_LockPosition_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Prevent accidental widget resizing.
-        /// </summary>
-        public static string Settings_Appearance_LockSize_Subtitle {
-            get {
-                return ResourceManager.GetString("Settings_Appearance_LockSize_Subtitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Lock size.
-        /// </summary>
-        public static string Settings_Appearance_LockSize_Title {
-            get {
-                return ResourceManager.GetString("Settings_Appearance_LockSize_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Widgets elements appear in the same color.
         /// </summary>
         public static string Settings_Appearance_Monochrome_Subtitle {
@@ -339,56 +420,56 @@ namespace uWidgets.Locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Position.
+        ///   Looks up a localized string similar to Presets.
         /// </summary>
-        public static string Settings_Appearance_Position {
+        public static string Settings_Appearance_Presets {
             get {
-                return ResourceManager.GetString("Settings_Appearance_Position", resourceCulture);
+                return ResourceManager.GetString("Settings_Appearance_Presets", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Size.
+        ///   Looks up a localized string similar to Inter, round corners, no border, no shadow.
         /// </summary>
-        public static string Settings_Appearance_Size {
+        public static string Settings_Appearance_Presets_Apple_Subtitle {
             get {
-                return ResourceManager.GetString("Settings_Appearance_Size", resourceCulture);
+                return ResourceManager.GetString("Settings_Appearance_Presets_Apple_Subtitle", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Align widget position to grid.
+        ///   Looks up a localized string similar to Apple.
         /// </summary>
-        public static string Settings_Appearance_SnapPosition_Subtitle {
+        public static string Settings_Appearance_Presets_Apple_Title {
             get {
-                return ResourceManager.GetString("Settings_Appearance_SnapPosition_Subtitle", resourceCulture);
+                return ResourceManager.GetString("Settings_Appearance_Presets_Apple_Title", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Snap position.
+        ///   Looks up a localized string similar to Apply.
         /// </summary>
-        public static string Settings_Appearance_SnapPosition_Title {
+        public static string Settings_Appearance_Presets_Apply {
             get {
-                return ResourceManager.GetString("Settings_Appearance_SnapPosition_Title", resourceCulture);
+                return ResourceManager.GetString("Settings_Appearance_Presets_Apply", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Align widget size to grid.
+        ///   Looks up a localized string similar to Segoe UI, sharp corners, native frame.
         /// </summary>
-        public static string Settings_Appearance_SnapSize_Subtitle {
+        public static string Settings_Appearance_Presets_Windows_Subtitle {
             get {
-                return ResourceManager.GetString("Settings_Appearance_SnapSize_Subtitle", resourceCulture);
+                return ResourceManager.GetString("Settings_Appearance_Presets_Windows_Subtitle", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Snap size.
+        ///   Looks up a localized string similar to Windows.
         /// </summary>
-        public static string Settings_Appearance_SnapSize_Title {
+        public static string Settings_Appearance_Presets_Windows_Title {
             get {
-                return ResourceManager.GetString("Settings_Appearance_SnapSize_Title", resourceCulture);
+                return ResourceManager.GetString("Settings_Appearance_Presets_Windows_Title", resourceCulture);
             }
         }
         

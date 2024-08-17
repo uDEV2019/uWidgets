@@ -8,7 +8,9 @@
         ToolTip.Placement="BottomEdgeAlignedRight"
         ToolTip.VerticalOffset="-25"
         ToolTip.HorizontalOffset="7"
-        SystemDecorations="None"
+        SystemDecorations="{Binding WidgetSystemDecorations}"
+        ExtendClientAreaToDecorationsHint="{Binding WidgetExtendClientArea}"
+        ExtendClientAreaTitleBarHeightHint="0"
         CanResize="False"
         x:DataType="views:Widget"
         Classes="Widget">

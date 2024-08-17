@@ -35,7 +35,9 @@ public partial class Widget : Window
         this.gridService = gridService;
         
         InitializeComponent();
-        
+
+        MinWidth = appSettingsProvider.Get().Dimensions.Size;
+        MinHeight = appSettingsProvider.Get().Dimensions.Size;
         Height = widgetLayoutProvider.Get().Height;
         Width = widgetLayoutProvider.Get().Width;
         Title = $"{widgetLayoutProvider.Get().Type} {widgetLayoutProvider.Get().SubType}";
@@ -44,7 +46,6 @@ public partial class Widget : Window
         
         Activated += OnActivated;
         RenderOptions.SetTextRenderingMode(this, TextRenderingMode.Antialias);
-        
         PointerPressed += OnPointerPressed;
         PointerReleased += OnPointerReleased;
         widgetLayoutProvider.DataChanged += UpdateControl;
@@ -62,6 +63,12 @@ public partial class Widget : Window
     public bool ShowEditButton => editWidgetWindow != null;
     public string Edit => $"{Locale.Widget_Edit} \"{widgetLayoutProvider.Get().Type}\"";
     public CornerRadius Radius => new(appSettingsProvider.Get().Dimensions.Radius / (Screens.ScreenFromWindow(this)?.Scaling ?? 1.0));
+    
+    public SystemDecorations WidgetSystemDecorations => appSettingsProvider.Get().Theme.UseNativeFrame
+        ? SystemDecorations.BorderOnly
+        : SystemDecorations.None;
+
+    public bool WidgetExtendClientArea => appSettingsProvider.Get().Theme.UseNativeFrame;
     public void EditWidget() => editWidgetWindow?.Invoke().ShowDialog(this);
     public void ResizeSmall() => _ = Resize(2, 2);
     public void ResizeMedium() => _ = Resize(4, 2);

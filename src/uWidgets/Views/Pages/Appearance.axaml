@@ -16,6 +16,20 @@
     </UserControl.Styles>
     <StackPanel Orientation="Vertical" Spacing="3">
         <TextBlock FontSize="14" FontWeight="SemiBold" Margin="0 0 0 10" 
+                   Text="{x:Static locales:Locale.Settings_Appearance_Presets}"/>
+        <controls:Setting Icon="{DynamicResource Windows}" 
+                          Title="{x:Static locales:Locale.Settings_Appearance_Presets_Windows_Title}" 
+                          Subtitle="{x:Static locales:Locale.Settings_Appearance_Presets_Windows_Subtitle}">
+            <Button MinWidth="130" HorizontalContentAlignment="Center" Click="ApplyWindowsStyle"
+                    Content="{x:Static locales:Locale.Settings_Appearance_Presets_Apply}" />
+        </controls:Setting>
+        <controls:Setting Icon="{DynamicResource Apple}" 
+                          Title="{x:Static locales:Locale.Settings_Appearance_Presets_Apple_Title}" 
+                          Subtitle="{x:Static locales:Locale.Settings_Appearance_Presets_Apple_Subtitle}">
+            <Button MinWidth="130" HorizontalContentAlignment="Center" Click="ApplyAppleStyle"
+                    Content="{x:Static locales:Locale.Settings_Appearance_Presets_Apply}" />
+        </controls:Setting>
+        <TextBlock FontSize="14" FontWeight="SemiBold" Margin="0 20 0 10" 
                    Text="{x:Static locales:Locale.Settings_Appearance_Theme}"/>
         <controls:Setting Icon="{DynamicResource Brush}" 
             Title="{x:Static locales:Locale.Settings_Appearance_DarkMode_Title}" 

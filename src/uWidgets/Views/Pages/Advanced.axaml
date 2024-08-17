@@ -7,27 +7,41 @@
              x:DataType="viewModels:AdvancedViewModel">
     <StackPanel Orientation="Vertical" Spacing="3">
         <TextBlock FontSize="14" FontWeight="SemiBold" Margin="0 0 0 10"
-                   Text="{x:Static locales:Locale.Settings_Appearance_Size}"/>
+                   Text="{x:Static locales:Locale.Settings_Advanced_Font}"/>
+        <controls:Setting Icon="{DynamicResource Font}" 
+                          Title="{x:Static locales:Locale.Settings_Advanced_FontFamily_Title}" 
+                          Subtitle="{x:Static locales:Locale.Settings_Advanced_FontFamily_Subtitle}">
+            <ComboBox ItemsSource="{Binding Fonts}" MinWidth="130" 
+                      SelectedItem="{Binding Font}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" Margin="0 4" />
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </controls:Setting>
+        <TextBlock FontSize="14" FontWeight="SemiBold" Margin="0 20 0 10"
+                   Text="{x:Static locales:Locale.Settings_Advanced_Size}"/>
         <controls:Setting Icon="{DynamicResource SnapSize}" 
-                          Title="{x:Static locales:Locale.Settings_Appearance_SnapSize_Title}" 
-                          Subtitle="{x:Static locales:Locale.Settings_Appearance_SnapSize_Subtitle}">
+                          Title="{x:Static locales:Locale.Settings_Advanced_SnapSize_Title}" 
+                          Subtitle="{x:Static locales:Locale.Settings_Advanced_SnapSize_Subtitle}">
             <ToggleSwitch IsChecked="{Binding SnapSize}" />
         </controls:Setting>
         <controls:Setting Icon="{DynamicResource Lock}" 
-                          Title="{x:Static locales:Locale.Settings_Appearance_LockSize_Title}" 
-                          Subtitle="{x:Static locales:Locale.Settings_Appearance_LockSize_Subtitle}">
+                          Title="{x:Static locales:Locale.Settings_Advanced_LockSize_Title}" 
+                          Subtitle="{x:Static locales:Locale.Settings_Advanced_LockSize_Subtitle}">
             <ToggleSwitch IsChecked="{Binding LockSize}" />
         </controls:Setting>
         <TextBlock FontSize="14" FontWeight="SemiBold" Margin="0 20 0 10"
-                   Text="{x:Static locales:Locale.Settings_Appearance_Position}"/>
+                   Text="{x:Static locales:Locale.Settings_Advanced_Position}"/>
         <controls:Setting Icon="{DynamicResource SnapPosition}" 
-                          Title="{x:Static locales:Locale.Settings_Appearance_SnapPosition_Title}" 
-                          Subtitle="{x:Static locales:Locale.Settings_Appearance_SnapPosition_Subtitle}">
+                          Title="{x:Static locales:Locale.Settings_Advanced_SnapPosition_Title}" 
+                          Subtitle="{x:Static locales:Locale.Settings_Advanced_SnapPosition_Subtitle}">
             <ToggleSwitch IsChecked="{Binding SnapPosition}" />
         </controls:Setting>
         <controls:Setting Icon="{DynamicResource Lock}" 
-                          Title="{x:Static locales:Locale.Settings_Appearance_LockPosition_Title}" 
-                          Subtitle="{x:Static locales:Locale.Settings_Appearance_LockPosition_Subtitle}">
+                          Title="{x:Static locales:Locale.Settings_Advanced_LockPosition_Title}" 
+                          Subtitle="{x:Static locales:Locale.Settings_Advanced_LockPosition_Subtitle}">
             <ToggleSwitch IsChecked="{Binding LockPosition}" />
         </controls:Setting>
         <TextBlock FontSize="14" FontWeight="SemiBold" Margin="0 20 0 10" 
