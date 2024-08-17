@@ -152,7 +152,7 @@ public static class MetricService
         foreach (var o in searcher.Get())
         {
             var obj = (ManagementObject)o;
-            if (Convert.ToInt32(obj["BatteryStatus"]) == 1){
+            if (Convert.ToInt32(obj["BatteryStatus"]) == 2){
                 return true;
             }
             else
