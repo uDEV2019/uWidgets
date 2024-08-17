@@ -20,25 +20,12 @@
 </div>
 <br />
 
-***
-
 <div align="center">
-  <a href="/README.md">
-    <kbd>
-      <img src="https://github.com/yammadev/flag-icons/blob/master/png/US.png?raw=true" height="10" />
-      English
-    </kbd>
-  </a>
-  |
-  <a href="*">
-    <kbd>
-      <img src="https://github.com/yammadev/flag-icons/blob/master/png/CN.png?raw=true" height="10" />
-      <b>中文</b>
-    </kbd>
-  </a>
-</div>
 
-***
+|<a href="/README.md"><kbd><img src="https://github.com/yammadev/flag-icons/blob/master/png/US.png?raw=true" height="10" />      English</kbd></a>|<kbd><img src="https://github.com/yammadev/flag-icons/blob/master/png/CN.png?raw=true" height="10" /><b>中文</b></kbd>|
+| :----------------------------------------------------------: | :----------------------------------------------------------: |
+
+</div>
 
 ## 特点
 
