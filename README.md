@@ -23,7 +23,7 @@
 ### This page on other languages
 
 <kbd><img src="https://github.com/yammadev/flag-icons/blob/master/png/US.png?raw=true" height="10" /> English</kbd>
-<a href="/README.ZH.md"><kbd><img src="https://github.com/yammadev/flag-icons/blob/master/png/CN.png?raw=true" height="10" /> 中文</kbd></a>
+<a href="/README.ZH-HANS.md"><kbd><img src="https://github.com/yammadev/flag-icons/blob/master/png/CN.png?raw=true" height="10" /> 中文 (简体)</kbd></a>
 
 ## Features
 
