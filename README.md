@@ -19,6 +19,26 @@
   <img src="https://img.shields.io/github/stars/creewick/uWidgets?style=flat"/>
 </div>
 
+***
+
+<div align="center">
+  <a href="*">
+    <kbd>
+      <img src="https://github.com/yammadev/flag-icons/blob/master/png/US.png?raw=true" height="10" />
+      <b>English</b>
+    </kbd>
+  </a>
+  |
+  <a href="/README.ZH.md">
+    <kbd>
+      <img src="https://github.com/yammadev/flag-icons/blob/master/png/CN.png?raw=true" height="10" />
+      中文
+    </kbd>
+  </a>
+</div>
+
+***
+
 ## Features
 
 6 types of fully customizable widgets
@@ -156,7 +176,7 @@ You can change the grid cell **size** and **margin** between widgets, or disable
 2. Extract the archive
 3. Launch `uWidgets.exe`
 
-## Deinstallation
+## Uninstallation
 
 1. Delete `uWidgets` folder
 
