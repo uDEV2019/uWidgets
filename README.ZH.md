@@ -61,8 +61,8 @@
 <img src=".github/images/weather-dark.png#gh-dark-mode-only" width="100" alt="天气" align="left">
 
 ### 天气
-**样式**: 清单 <br>
-**特性**: 交互式待办清单、自定义标题、项目计数器
+**样式**: 预报、温度、紫外线指数 <br>
+**特点**: 多达 7 天的预报、可按名称搜索城市
 
 <img src=".github/images/monitor-light.png#gh-light-mode-only" width="100" alt="监视器" align="left">
 <img src=".github/images/monitor-dark.png#gh-dark-mode-only" width="100" alt="监视器" align="left">
@@ -75,7 +75,7 @@
 
 - ☀️ **亮色** 和 🌑 **暗色** 主题支持
   
-- 🫧 **透明**效果
+- 💧 **透明**效果
 
 - 🎨 **强调色**选择
 
