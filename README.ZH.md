@@ -20,12 +20,10 @@
 </div>
 <br />
 
-<div align="center">
+## 此页其他语言版本
 
-|<a href="/README.md"><kbd><img src="https://github.com/yammadev/flag-icons/blob/master/png/US.png?raw=true" height="10" />      English</kbd></a>|<kbd><img src="https://github.com/yammadev/flag-icons/blob/master/png/CN.png?raw=true" height="10" /><b>中文</b></kbd>|
-| :----------------------------------------------------------: | :----------------------------------------------------------: |
-
-</div>
+<a href="/README.md"><kbd><img src="https://github.com/yammadev/flag-icons/blob/master/png/US.png?raw=true" height="10" /> English</kbd></a>
+<kbd><img src="https://github.com/yammadev/flag-icons/blob/master/png/CN.png?raw=true" height="10" /> 中文</kbd>
 
 ## 特点
 
