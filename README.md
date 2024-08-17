@@ -19,12 +19,11 @@
   <img src="https://img.shields.io/github/stars/creewick/uWidgets?style=flat"/>
 </div>
 <br />
-<div align="center">
 
-|<kbd><img src="https://github.com/yammadev/flag-icons/blob/master/png/US.png?raw=true" height="10" /><b>English</b></kbd>|<a href="/README.ZH.md"><kbd><img src="https://github.com/yammadev/flag-icons/blob/master/png/CN.png?raw=true" height="10" />中文</kbd></a>|
-| :----------------------------------------------------------: | :----------------------------------------------------------: |
+### This page on other languages
 
-</div>
+<kbd><img src="https://github.com/yammadev/flag-icons/blob/master/png/US.png?raw=true" height="10" /> English</kbd>
+<a href="/README.ZH.md"><kbd><img src="https://github.com/yammadev/flag-icons/blob/master/png/CN.png?raw=true" height="10" /> 中文</kbd></a>
 
 ## Features
 
