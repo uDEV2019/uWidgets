@@ -140,4 +140,28 @@ public static class MetricService
 
         return null;
     }
+
+    // The following code implements the battery charging status readout, but it's a bit difficult to integrate it well with the battery section
+
+    /*
+    public static bool IsBatteryCharing()
+    {
+        if (!OperatingSystem.IsWindows()) return false;
+
+        using var searcher = new ManagementObjectSearcher("select * from Win32_Battery");
+        foreach (var o in searcher.Get())
+        {
+            var obj = (ManagementObject)o;
+            if (Convert.ToInt32(obj["BatteryStatus"]) == 1){
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        return false;
+    }
+    */
 }
