@@ -346,7 +346,7 @@
     <value>字体</value>
   </data>
   <data name="Settings_Advanced_FontFamily_Title" xml:space="preserve">
-    <value>字体家族</value>
+    <value>字体</value>
   </data>
   <data name="Settings_Advanced_FontFamily_Subtitle" xml:space="preserve">
     <value>小部件使用的字体</value>
