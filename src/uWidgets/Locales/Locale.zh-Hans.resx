@@ -340,7 +340,7 @@
     <value>Apple 风格</value>
   </data>
   <data name="Settings_Appearance_Presets_Apple_Subtitle" xml:space="preserve">
-    <value>内置字体，圆边框，无边框，无阴影</value>
+    <value>Inter 字体，圆边框，无边框，无阴影</value>
   </data>
   <data name="Settings_Advanced_Font" xml:space="preserve">
     <value>字体</value>
