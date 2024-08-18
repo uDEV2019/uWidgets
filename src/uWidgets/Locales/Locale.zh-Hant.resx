@@ -118,22 +118,22 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Settings_Appearance" xml:space="preserve">
-    <value>外观</value>
+    <value>外觀</value>
   </data>
   <data name="Settings_General" xml:space="preserve">
-    <value>常规</value>
+    <value>常規</value>
   </data>
   <data name="Settings_About" xml:space="preserve">
-    <value>关于</value>
+    <value>關於</value>
   </data>
   <data name="Settings_Appearance_Theme" xml:space="preserve">
-    <value>主题</value>
+    <value>主題</value>
   </data>
   <data name="Settings_Appearance_DarkMode_Title" xml:space="preserve">
-    <value>选择模式</value>
+    <value>選擇模式</value>
   </data>
   <data name="Settings_Appearance_DarkMode_Subtitle" xml:space="preserve">
-    <value>更改小部件中显示的颜色</value>
+    <value>變更小工具中顯示的顏色</value>
   </data>
   <data name="Settings_Appearance_DarkMode_True" xml:space="preserve">
     <value>暗</value>
@@ -142,16 +142,16 @@
     <value>亮</value>
   </data>
   <data name="Settings_Appearance_DarkMode_Null" xml:space="preserve">
-    <value>跟随系统</value>
+    <value>跟隨系統</value>
   </data>
   <data name="Settings_Appearance_Transparency_Title" xml:space="preserve">
     <value>透明效果</value>
   </data>
   <data name="Settings_Appearance_Transparency_Subtitle" xml:space="preserve">
-    <value>小部件将呈现半透明状态</value>
+    <value>小部件將呈現半透明狀態</value>
   </data>
   <data name="Settings_Appearance_AccentColor_Title" xml:space="preserve">
-    <value>强调色</value>
+    <value>強調色</value>
   </data>
   <data name="Settings_Advanced_Size" xml:space="preserve">
     <value>尺寸</value>
@@ -160,7 +160,7 @@
     <value>尺寸</value>
   </data>
   <data name="Settings_Advanced_WidgetMargin_Title" xml:space="preserve">
-    <value>小部件边距</value>
+    <value>小部件邊距</value>
   </data>
   <data name="Widget_Remove" xml:space="preserve">
     <value>移除小部件</value>
@@ -178,16 +178,16 @@
     <value>大</value>
   </data>
   <data name="Widget_Size_ExtraLarge" xml:space="preserve">
-    <value>巨大</value>
+    <value>超大</value>
   </data>
   <data name="Widget_Edit" xml:space="preserve">
-    <value>编辑</value>
+    <value>編輯</value>
   </data>
   <data name="Widget_OpenSettings" xml:space="preserve">
-    <value>编辑小部件</value>
+    <value>編輯小部件</value>
   </data>
   <data name="Settings" xml:space="preserve">
-    <value>设置</value>
+    <value>設定</value>
   </data>
   <data name="Widget" xml:space="preserve">
     <value>小部件</value>
@@ -199,106 +199,106 @@
     <value>更多</value>
   </data>
   <data name="Settings_About_Repository" xml:space="preserve">
-    <value>GitHub 存储库</value>
+    <value>GitHub 儲存庫</value>
   </data>
   <data name="Settings_About_ReportBug" xml:space="preserve">
-    <value>反馈 bug</value>
+    <value>回饋 bug</value>
   </data>
   <data name="Settings_General_Language_Title" xml:space="preserve">
-    <value>显示语言</value>
+    <value>顯示語言</value>
   </data>
   <data name="Settings_General_Language_Subtitle" xml:space="preserve">
-    <value>uWidgets 将以所选语言显示</value>
+    <value>uWidgets 將以選定語言顯示</value>
   </data>
   <data name="Settings_Advanced_WidgetMargin_Subtitle" xml:space="preserve">
-    <value>小部件之间的最小距离</value>
+    <value>小部件之間的最小距離</value>
   </data>
   <data name="Settings_Advanced_WidgetSize_Subtitle" xml:space="preserve">
     <value>最小部件的尺寸</value>
   </data>
   <data name="Settings_General_Exit_Title" xml:space="preserve">
-    <value>退出程序</value>
+    <value>退出程式</value>
   </data>
   <data name="Settings_General_Exit_Action" xml:space="preserve">
     <value>退出</value>
   </data>
   <data name="Settings_General_Restart_Action" xml:space="preserve">
-    <value>重启</value>
+    <value>重啟</value>
   </data>
   <data name="Settings_General_Restart_Title" xml:space="preserve">
-    <value>重启程序</value>
+    <value>重啟程式</value>
   </data>
   <data name="Settings_General_Language" xml:space="preserve">
-    <value>语言</value>
+    <value>語言</value>
   </data>
   <data name="Settings_General_Actions" xml:space="preserve">
     <value>更多</value>
   </data>
   <data name="Settings_About_Repository_Action" xml:space="preserve">
-    <value>访问</value>
+    <value>訪問</value>
   </data>
   <data name="Widgets" xml:space="preserve">
     <value>小部件</value>
   </data>
   <data name="Settings_Advanced_SnapPosition_Title" xml:space="preserve">
-    <value>对齐位置</value>
+    <value>對齊位置</value>
   </data>
   <data name="Settings_Advanced_SnapPosition_Subtitle" xml:space="preserve">
-    <value>将小部件位置与网格对齐</value>
+    <value>將小部件位置與網格對齊</value>
   </data>
   <data name="Widget_Save" xml:space="preserve">
-    <value>确定</value>
+    <value>確定</value>
   </data>
   <data name="Settings_Appearance_Monochrome_Title" xml:space="preserve">
-    <value>单色主题</value>
+    <value>單色主題</value>
   </data>
   <data name="Settings_Appearance_Monochrome_Subtitle" xml:space="preserve">
-    <value>小部件元素以相同的颜色显示</value>
+    <value>小部件元素以相同的顏色顯示</value>
   </data>
   <data name="Update_SoftwareUpdate" xml:space="preserve">
-    <value>软件更新</value>
+    <value>軟體更新</value>
   </data>
   <data name="Update_UpdateFormat" xml:space="preserve">
-    <value>uWidgets {0} 可供下载</value>
+    <value>uWidgets {0} 可供下載</value>
   </data>
   <data name="Update_Download" xml:space="preserve">
-    <value>下载</value>
+    <value>下載</value>
   </data>
   <data name="Update_Later" xml:space="preserve">
-    <value>以后再说</value>
+    <value>以後再說</value>
   </data>
   <data name="Update_SkipThisVersion" xml:space="preserve">
-    <value>跳过此版本</value>
+    <value>跳過此版本</value>
   </data>
   <data name="Settings_Appearance_AccentColor_Null" xml:space="preserve">
-    <value>跟随系统</value>
+    <value>跟隨系統</value>
   </data>
   <data name="Settings_Appearance_AccentColor_Manual" xml:space="preserve">
-    <value>手动</value>
+    <value>手動</value>
   </data>
   <data name="Settings_General_Startup_Title" xml:space="preserve">
-    <value>开机自启</value>
+    <value>開機自啟</value>
   </data>
   <data name="Settings_General_Startup_Subtitle" xml:space="preserve">
-    <value>该程序将在系统启动时自动启动</value>
+    <value>該程式將在系統啟動時自動啟動</value>
   </data>
   <data name="Settings_General_Startup" xml:space="preserve">
-    <value>启动</value>
+    <value>啟動</value>
   </data>
   <data name="Settings_Advanced_SnapSize_Title" xml:space="preserve">
-    <value>对齐尺寸</value>
+    <value>對齊尺寸</value>
   </data>
   <data name="Settings_Advanced_SnapSize_Subtitle" xml:space="preserve">
-    <value>将小部件大小与网格对齐</value>
+    <value>將小部件大小與網格對齊</value>
   </data>
   <data name="Settings_Advanced_LockSize_Title" xml:space="preserve">
-    <value>锁定尺寸</value>
+    <value>鎖定尺寸</value>
   </data>
   <data name="Settings_Advanced_LockPosition_Title" xml:space="preserve">
-    <value>锁定位置</value>
+    <value>鎖定位置</value>
   </data>
   <data name="Settings_Advanced_LockSize_Subtitle" xml:space="preserve">
-    <value>防止意外调整小部件大小</value>
+    <value>防止意外調整小部件大小</value>
   </data>
   <data name="Settings_Advanced_LockPosition_Subtitle" xml:space="preserve">
     <value>防止意外重新定位小部件</value>
@@ -307,48 +307,48 @@
     <value>位置</value>
   </data>
   <data name="Settings_Advanced" xml:space="preserve">
-    <value>高级</value>
+    <value>高級</value>
   </data>
   <data name="Settings_Advanced_WidgetRadius_Title" xml:space="preserve">
     <value>小部件圆角大小</value>
   </data>
   <data name="Settings_Advanced_WidgetRadius_Subtitle" xml:space="preserve">
-    <value>小部件角半径</value>
+    <value>小部件角半徑</value>
   </data>
   <data name="Settings_RestartRequired" xml:space="preserve">
-    <value>重新启动应用程序以应用更改</value>
+    <value>重新啟動應用程式以應用更改</value>
   </data>
   <data name="Settings_AdminRequired" xml:space="preserve">
-    <value>以管理员身份运行应用程序来更改此设置</value>
+    <value>以管理員身份執行應用程式來更改此設置</value>
   </data>
   <data name="Settings_Advanced_Dimensions" xml:space="preserve">
-    <value>形状</value>
+    <value>形狀</value>
   </data>
   <data name="Settings_Appearance_Presets" xml:space="preserve">
-    <value>预设</value>
+    <value>預設</value>
   </data>
   <data name="Settings_Appearance_Presets_Windows_Title" xml:space="preserve">
-    <value>Windows 风格</value>
+    <value>Windows 風格</value>
   </data>
   <data name="Settings_Appearance_Presets_Windows_Subtitle" xml:space="preserve">
-    <value>Segoe UI 字体，尖锐边框，原生边框</value>
+    <value>Segoe UI 字體，尖銳邊框，原生邊框</value>
   </data>
   <data name="Settings_Appearance_Presets_Apply" xml:space="preserve">
-    <value>应用</value>
+    <value>應用</value>
   </data>
   <data name="Settings_Appearance_Presets_Apple_Title" xml:space="preserve">
-    <value>Apple 风格</value>
+    <value>Apple 風格</value>
   </data>
   <data name="Settings_Appearance_Presets_Apple_Subtitle" xml:space="preserve">
-    <value>内置字体，圆边框，无边框，无阴影</value>
+    <value>內建字體，圓邊框，無邊框，無陰影</value>
   </data>
   <data name="Settings_Advanced_Font" xml:space="preserve">
-    <value>字体</value>
+    <value>字體</value>
   </data>
   <data name="Settings_Advanced_FontFamily_Title" xml:space="preserve">
-    <value>字体家族</value>
+    <value>字體</value>
   </data>
   <data name="Settings_Advanced_FontFamily_Subtitle" xml:space="preserve">
-    <value>小部件使用的字体</value>
+    <value>小部件使用的字體</value>
   </data>
 </root>
