@@ -35,23 +35,26 @@ public partial class Widget : Window
         this.gridService = gridService;
         
         InitializeComponent();
-
-        MinWidth = appSettingsProvider.Get().Dimensions.Size;
-        MinHeight = appSettingsProvider.Get().Dimensions.Size;
+        
         Height = widgetLayoutProvider.Get().Height;
         Width = widgetLayoutProvider.Get().Width;
         Title = $"{widgetLayoutProvider.Get().Type} {widgetLayoutProvider.Get().SubType}";
         ContentPresenter.Content = userControl();
         DataContext = this;
         
-        Activated += OnActivated;
+        SetMinMaxSize(this.appSettingsProvider.Get().Layout.LockSize);
         RenderOptions.SetTextRenderingMode(this, TextRenderingMode.Antialias);
+        
+        Activated += OnActivated;
+        Resized += OnResized;
         PointerPressed += OnPointerPressed;
         PointerReleased += OnPointerReleased;
-        widgetLayoutProvider.DataChanged += UpdateControl;
-        appSettingsProvider.DataChanged += MoveResize;
+        widgetLayoutProvider.DataChanged += OnWidgetLayoutUpdated;
+        appSettingsProvider.DataChanged += OnAppSettingsUpdated;
         Unloaded += OnUnloaded;
     }
+
+    private void OnResized(object? sender, WindowResizedEventArgs e) => AfterResize();
 
     private void OnActivated(object? sender, EventArgs e)
     {
@@ -68,6 +71,7 @@ public partial class Widget : Window
         ? SystemDecorations.BorderOnly
         : SystemDecorations.None;
 
+    public bool ToolTipVisible => !appSettingsProvider.Get().Theme.UseNativeFrame && !appSettingsProvider.Get().Layout.LockSize;
     public bool WidgetExtendClientArea => appSettingsProvider.Get().Theme.UseNativeFrame;
     public void EditWidget() => editWidgetWindow?.Invoke().ShowDialog(this);
     public void ResizeSmall() => _ = Resize(2, 2);
@@ -88,25 +92,40 @@ public partial class Widget : Window
         ContentPresenter.RenderTransform = new ScaleTransform(scaleFactor, scaleFactor);
     }
 
-    private void MoveResize(object sender, AppSettings? olddata, AppSettings newdata)
+    private void OnAppSettingsUpdated(object sender, AppSettings? oldData, AppSettings newData)
     {
-        if (olddata?.Dimensions == newdata.Dimensions) return;
+        if (oldData?.Layout.LockSize != newData.Layout.LockSize)
+            SetMinMaxSize(newData.Layout.LockSize);
+
+        if (oldData?.Dimensions != newData.Dimensions)
+        {
+            AfterMove();
+            AfterResize();
+        }
+    }
+
+    private void SetMinMaxSize(bool lockSize)
+    {
+        var size = appSettingsProvider.Get().Dimensions.Size;
         
-        AfterMove();
-        AfterResize();
+        MinWidth = lockSize ? Width : size;
+        MinHeight = lockSize ? Height : size;
+        MaxWidth = lockSize ? Width : double.PositiveInfinity;
+        MaxHeight = lockSize ? Height : double.PositiveInfinity;
     }
 
     private void OnUnloaded(object? sender, RoutedEventArgs e)
     {
         PointerPressed -= OnPointerPressed;
         PointerReleased -= OnPointerReleased;
+        Resized -= OnResized;
         Activated -= OnActivated;
         Unloaded -= OnUnloaded;
-        widgetLayoutProvider.DataChanged -= UpdateControl;
-        appSettingsProvider.DataChanged -= MoveResize;
+        widgetLayoutProvider.DataChanged -= OnWidgetLayoutUpdated;
+        appSettingsProvider.DataChanged -= OnAppSettingsUpdated;
     }
 
-    private void UpdateControl(object? sender, WidgetLayout? oldLayout, WidgetLayout newLayout)
+    private void OnWidgetLayoutUpdated(object? sender, WidgetLayout? oldLayout, WidgetLayout newLayout)
     {
         if (!Equals(oldLayout?.Settings, newLayout.Settings))
             ContentPresenter.Content = userControl();

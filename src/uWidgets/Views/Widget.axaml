@@ -52,7 +52,7 @@
     </Window.Styles>
     
     <ToolTip.Tip>
-        <Viewbox Stretch="Uniform" Width="32" Height="32">
+        <Viewbox IsVisible="{Binding ToolTipVisible}" Stretch="Uniform" Width="32" Height="32">
             <Path Fill="{DynamicResource SystemControlForegroundBaseHighBrush}" 
                   Data="M1 3A1 1 0 001 5C3 5 5 3 5 1A1 1 0 003 1C3 2 2 3 1 3"
                   PointerPressed="Resize"/>
