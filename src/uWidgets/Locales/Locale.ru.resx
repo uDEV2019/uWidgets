@@ -236,13 +236,19 @@
     <data name="Settings_Appearance_Presets_Apple_Subtitle" xml:space="preserve">
         <value>Inter, круглые углы, без рамки и тени</value>
     </data>
-    <data name="Settings_Advanced_Font" xml:space="preserve">
-        <value>Шрифт</value>
+    <data name="Settings_Advanced_Appearance" xml:space="preserve">
+        <value>Оформление</value>
     </data>
     <data name="Settings_Advanced_FontFamily_Title" xml:space="preserve">
         <value>Шрифт</value>
     </data>
     <data name="Settings_Advanced_FontFamily_Subtitle" xml:space="preserve">
         <value>Шрифт виджетов</value>
+    </data>
+    <data name="Settings_Advanced_UseNativeFrame_Subtitle" xml:space="preserve">
+        <value>Использовать системную рамку окна</value>
+    </data>
+    <data name="Settings_Advanced_UseNativeFrame_Title" xml:space="preserve">
+        <value>Системная рамка</value>
     </data>
 </root>

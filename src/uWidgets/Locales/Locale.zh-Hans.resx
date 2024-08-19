@@ -342,8 +342,8 @@
   <data name="Settings_Appearance_Presets_Apple_Subtitle" xml:space="preserve">
     <value>Inter 字体，圆边框，无边框，无阴影</value>
   </data>
-  <data name="Settings_Advanced_Font" xml:space="preserve">
-    <value>字体</value>
+  <data name="Settings_Advanced_Appearance" xml:space="preserve">
+    <value>外观</value>
   </data>
   <data name="Settings_Advanced_FontFamily_Title" xml:space="preserve">
     <value>字体</value>

@@ -19,6 +19,18 @@ public class AdvancedViewModel(IAppSettingsProvider appSettingsProvider) : React
             appSettingsProvider.Save(newSettings);
         }
     }
+
+    public bool UseNativeFrame
+    {
+        get => appSettingsProvider.Get().Theme.UseNativeFrame;
+        set
+        {
+            var settings = appSettingsProvider.Get();
+            var theme = settings.Theme with { UseNativeFrame = value };
+            var newSettings = settings with { Theme = theme };
+            appSettingsProvider.Save(newSettings);
+        }        
+    }
     
     public int Size
     {

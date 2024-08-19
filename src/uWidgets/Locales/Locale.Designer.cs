@@ -141,20 +141,20 @@ namespace uWidgets.Locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Appearance.
+        /// </summary>
+        public static string Settings_Advanced_Appearance {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_Appearance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dimensions.
         /// </summary>
         public static string Settings_Advanced_Dimensions {
             get {
                 return ResourceManager.GetString("Settings_Advanced_Dimensions", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Font.
-        /// </summary>
-        public static string Settings_Advanced_Font {
-            get {
-                return ResourceManager.GetString("Settings_Advanced_Font", resourceCulture);
             }
         }
         
@@ -263,6 +263,24 @@ namespace uWidgets.Locales {
         public static string Settings_Advanced_SnapSize_Title {
             get {
                 return ResourceManager.GetString("Settings_Advanced_SnapSize_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use native window frame.
+        /// </summary>
+        public static string Settings_Advanced_UseNativeFrame_Subtitle {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_UseNativeFrame_Subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Native frame.
+        /// </summary>
+        public static string Settings_Advanced_UseNativeFrame_Title {
+            get {
+                return ResourceManager.GetString("Settings_Advanced_UseNativeFrame_Title", resourceCulture);
             }
         }
         
