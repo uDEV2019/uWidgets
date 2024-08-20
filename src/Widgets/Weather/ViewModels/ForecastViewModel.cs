@@ -6,6 +6,7 @@ using uWidgets.Services;
 using Weather.Models;
 using Weather.Models.Forecast;
 using Weather.Services;
+using Weather.Views.Controls;
 
 namespace Weather.ViewModels;
 
@@ -37,19 +38,8 @@ public class ForecastViewModel : ReactiveObject, IDisposable
         CurrentMinMax = $"{forecast.Daily.Max[0]:0}°  {forecast.Daily.Min[0]:0}°";
         CurrentMin = $"{forecast.Daily.Min[0]:0}";
         CurrentMax = $"{forecast.Daily.Max[0]:0}";
-        Current = $"{forecast.Current.Temperature:0}";
-        CurrentTemperatureDashArray =
-        [
-            (forecast.Current.Temperature - forecast.Daily.Min[0]) /
-            (forecast.Daily.Max[0] - forecast.Daily.Min[0]) * 21,
-            42
-        ];
-        UVIndexDashArray =
-        [
-            forecast.Hourly.UVIndex[currentHour] / 10 * 21,
-            42
-        ];
-        UVIndex = $"{forecast.Hourly.UVIndex[currentHour]:0}";
+        TemperatureMetric = new(forecast.Daily.Min.Min(), forecast.Daily.Max.Max(), forecast.Current.Temperature, null);
+        UVIndex = new(0, 10, forecast.Hourly.UVIndex[currentHour], WeatherIcon.Clear);
         HourlyForecast = Enumerable
             .Range(currentHour, forecast.Hourly.Temperature.Count - currentHour)
             .Select(hour => GetHourlyForecast(forecast, hour % 24));
@@ -135,7 +125,6 @@ public class ForecastViewModel : ReactiveObject, IDisposable
         get => currentMinMax;
         private set => this.RaiseAndSetIfChanged(ref currentMinMax, value);
     }
-    
         
     private string? currentMin = "--";
     public string? CurrentMin
@@ -151,30 +140,15 @@ public class ForecastViewModel : ReactiveObject, IDisposable
         private set => this.RaiseAndSetIfChanged(ref currentMax, value);
     }
 
-    private string? current = "--";
-    public string? Current
+    private MetricViewModel temperatureMetric = new(0, 1, 0, null);
+    public MetricViewModel TemperatureMetric
     {
-        get => current;
-        private set => this.RaiseAndSetIfChanged(ref current, value);
+        get => temperatureMetric;
+        private set => this.RaiseAndSetIfChanged(ref temperatureMetric, value);
     }
-
-    private AvaloniaList<double> currentTemperatureDashArray = [0,42];
-    public AvaloniaList<double> CurrentTemperatureDashArray
-    {
-        get => currentTemperatureDashArray;
-        private set => this.RaiseAndSetIfChanged(ref currentTemperatureDashArray, value);
-    }
-
-    private AvaloniaList<double> uvIndexDashArray = [0, 42];
-    public AvaloniaList<double> UVIndexDashArray
-    {
-        get => uvIndexDashArray;
-        private set => this.RaiseAndSetIfChanged(ref uvIndexDashArray, value);
-    }
-
-    private string uvIndex;
     
-    public string UVIndex
+    private MetricViewModel uvIndex = new(0, 10, 0, WeatherIcon.Clear);
+    public MetricViewModel UVIndex
     {
         get => uvIndex;
         private set => this.RaiseAndSetIfChanged(ref uvIndex, value);
