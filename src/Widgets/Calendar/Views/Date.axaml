@@ -12,8 +12,8 @@
             <TextBlock Grid.Row="0" Grid.Column="1" Opacity="0.5" FontWeight="Bold"
                        Text="{Binding Month}" 
                        VerticalAlignment="Bottom" HorizontalAlignment="Left" />
-            <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,-5,0,0" 
-                       FontSize="50" LineHeight="55" Text="{Binding Day}" FontWeight="SemiBold"
+            <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" LetterSpacing="-3"
+                       FontSize="50" LineHeight="45" Text="{Binding Day}" FontWeight="SemiBold"
                        VerticalAlignment="Top" HorizontalAlignment="Center" />
         </Grid>
     </Viewbox>

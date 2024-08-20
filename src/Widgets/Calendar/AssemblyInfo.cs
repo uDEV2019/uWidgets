@@ -6,7 +6,7 @@ using Calendar.Views.Settings;
 using uWidgets.Core.Models.Attributes;
 
 [assembly: AssemblyCompany("creewick")]
-[assembly: AssemblyVersion("1.0.5")]
+[assembly: AssemblyVersion("1.0.6")]
 
 [assembly: WidgetInfo(typeof(Date), null, null, "Calendar_Date_Title", "Calendar_Date_Subtitle")]
 [assembly: WidgetInfo(typeof(Month), typeof(MonthCalendarModel), typeof(MonthCalendarSettings), "Calendar_Month_Title", "Calendar_Month_Subtitle")]
