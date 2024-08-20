@@ -67,6 +67,8 @@ public class AdvancedViewModel(IAppSettingsProvider appSettingsProvider) : React
             appSettingsProvider.Save(newSettings);
         }
     }
+
+    public bool RadiusEnabled => !appSettingsProvider.Get().Theme.UseNativeFrame;
     
     public bool SnapPosition
     {
