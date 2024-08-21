@@ -147,4 +147,10 @@
     <data name="Weather_SunriseSunset_Subtitle" xml:space="preserve">
         <value>See the upcoming sunrise or sunset for your location</value>
     </data>
+    <data name="Weather_AirQuality_Title" xml:space="preserve">
+        <value>Air Quality</value>
+    </data>
+    <data name="Weather_AirQuality_Subtitle" xml:space="preserve">
+        <value>See the current air quality index for your location</value>
+    </data>
 </root>

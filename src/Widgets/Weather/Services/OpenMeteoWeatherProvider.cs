@@ -41,6 +41,34 @@ public class OpenMeteoWeatherProvider
         }
     }
 
+    public async Task<AirQualityResponse?> GetAirQualityAsync(double latitude, double longitude)
+    {
+        try
+        {
+            var latitudeString = string.Format(CultureInfo.InvariantCulture, "{0:F4}", latitude);
+            var longitudeString = string.Format(CultureInfo.InvariantCulture, "{0:F4}", longitude);
+
+            var url = $"https://air-quality-api.open-meteo.com/v1/air-quality?" +
+                      $"latitude={latitudeString}&" +
+                      $"longitude={longitudeString}&" +
+                      $"current=european_aqi";
+            
+            var response = await httpClient.GetAsync(url);
+
+            if (!response.IsSuccessStatusCode) throw new Exception(JsonSerializer.Serialize(response));
+
+            var json = await response.Content.ReadAsStringAsync();
+            var forecast = JsonSerializer.Deserialize<AirQualityResponse>(json);
+
+            return forecast;
+        }
+        catch (Exception e)
+        {
+            await File.WriteAllTextAsync("weather_crash_log.txt", $"{e.Message}{Environment.NewLine}{e.StackTrace}");
+            return null;
+        }
+    } 
+
     public async Task<List<City>?> GetCitiesAsync(string cityName)
     {
         try

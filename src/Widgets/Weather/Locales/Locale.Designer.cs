@@ -69,6 +69,24 @@ namespace Weather.Locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to See the current air quality index for your location.
+        /// </summary>
+        public static string Weather_AirQuality_Subtitle {
+            get {
+                return ResourceManager.GetString("Weather_AirQuality_Subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Air Quality.
+        /// </summary>
+        public static string Weather_AirQuality_Title {
+            get {
+                return ResourceManager.GetString("Weather_AirQuality_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Clear.
         /// </summary>
         public static string Weather_Code_0 {

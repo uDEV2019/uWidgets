@@ -140,4 +140,10 @@
     <data name="Weather_SunriseSunset_Title" xml:space="preserve">
         <value>Восход и закат</value>
     </data>
+    <data name="Weather_AirQuality_Subtitle" xml:space="preserve">
+        <value>Смотрите текущий индекс качества воздуха для местоположения</value>
+    </data>
+    <data name="Weather_AirQuality_Title" xml:space="preserve">
+        <value>Индекс Качества Воздуха</value>
+    </data>
 </root>
