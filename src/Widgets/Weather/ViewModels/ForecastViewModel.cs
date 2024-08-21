@@ -39,12 +39,27 @@ public class ForecastViewModel : ReactiveObject, IDisposable
         TemperatureMetric = new(forecast.Daily.Min.Min(), forecast.Daily.Max.Max(), forecast.Current.Temperature, null);
         UVIndex = new(0, 10, forecast.Hourly.UVIndex[currentHour], WeatherIcon.Clear);
         Pressure = new(960, 1050, forecast.Current.Pressure, WeatherIcon.Pressure);
+        SunsetSunrise = GetSunsetSunrise(forecast);
         HourlyForecast = Enumerable
             .Range(currentHour, forecast.Hourly.Temperature.Count - currentHour)
             .Select(hour => GetHourlyForecast(forecast, hour % 24));
         DailyForecast = Enumerable
             .Range(0, forecast.Daily.Min.Count)
             .Select(day => GetDailyForecast(forecast, day));
+    }
+
+    private SunriseSunsetViewModel GetSunsetSunrise(ForecastResponse forecast)
+    {
+        var sunrise = forecast.Daily.Sunrise[0];
+        var sunset = forecast.Daily.Sunset[0];
+        var sunriseTomorrow = forecast.Daily.Sunrise[1];
+        var now = DateTime.Now;
+
+        if (now < sunrise)
+            return new(WeatherIcon.Sunrise, sunrise.ToString("HH:mm"));
+        if (now < sunset)
+            return new(WeatherIcon.Sunset, sunset.ToString("HH:mm"));
+        return new(WeatherIcon.Sunrise, sunriseTomorrow.ToString("HH:mm"));
     }
 
     private DailyForecastViewModel GetDailyForecast(ForecastResponse forecast, int day)
@@ -158,6 +173,13 @@ public class ForecastViewModel : ReactiveObject, IDisposable
     {
         get => pressure;
         private set => this.RaiseAndSetIfChanged(ref pressure, value);
+    }
+    
+    private SunriseSunsetViewModel sunsetSunrise = new(new(), "--:--");
+    public SunriseSunsetViewModel SunsetSunrise
+    {
+        get => sunsetSunrise;
+        private set => this.RaiseAndSetIfChanged(ref sunsetSunrise, value);
     }
 
     public void Dispose()
