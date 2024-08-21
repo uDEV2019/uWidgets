@@ -5,6 +5,7 @@ using Avalonia.Animation;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
+using Avalonia.Layout;
 using Avalonia.Media;
 using uWidgets.Core.Interfaces;
 using uWidgets.Core.Models;
@@ -89,6 +90,8 @@ public partial class Widget : Window
     private void Scale()
     {
         var scaleFactor = appSettingsProvider.Get().Dimensions.Size / 72.0;
+        ContentPresenter.HorizontalAlignment = HorizontalAlignment.Left;
+        ContentPresenter.VerticalAlignment = VerticalAlignment.Top;
         ContentPresenter.Width = Width / scaleFactor;
         ContentPresenter.Height = Height / scaleFactor;
         if (Math.Abs(scaleFactor - 1.0) < 0.01) return;
