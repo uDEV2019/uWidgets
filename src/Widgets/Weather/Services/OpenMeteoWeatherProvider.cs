@@ -20,7 +20,7 @@ public class OpenMeteoWeatherProvider
                       $"latitude={latitudeString}&" +
                       $"longitude={longitudeString}&" +
                       $"temperature_unit={temperatureUnit}&" +
-                      $"current=temperature_2m,weathercode&" +
+                      $"current=temperature_2m,weathercode,surface_pressure&" +
                       $"hourly=temperature_2m,weathercode,uv_index,is_day&" +
                       $"daily=temperature_2m_min,temperature_2m_max,weathercode,sunrise,sunset&" +
                       $"timezone=auto";

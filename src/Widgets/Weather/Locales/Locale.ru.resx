@@ -128,4 +128,10 @@
     <data name="Weather_UVIndex_Subtitle" xml:space="preserve">
         <value>Смотрите текущий УФ индекс для местоположения</value>
     </data>
+    <data name="Weather_Pressure_Title" xml:space="preserve">
+        <value>Давление</value>
+    </data>
+    <data name="Weather_Pressure_Subtitle" xml:space="preserve">
+        <value>Значительные, быстрые изменения давления используются для прогнозирования изменений погоды</value>
+    </data>
 </root>

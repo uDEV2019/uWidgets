@@ -12,4 +12,7 @@ public class CurrentForecast
     
     [JsonPropertyName("weathercode")]
     public WeatherCode WeatherCode { get; set; }
+    
+    [JsonPropertyName("surface_pressure")]
+    public double Pressure { get; set; }
 }

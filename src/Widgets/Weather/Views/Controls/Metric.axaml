@@ -27,8 +27,8 @@
                     <EllipseGeometry Center="55,55" RadiusX="50" RadiusY="50" />
                 </Path.Data>
             </Path>
-            <TextBlock Canvas.Top="20" FontSize="50" FontWeight="SemiBold"
-                       MinWidth="110" TextAlignment="Center"
+            <TextBlock FontSize="{Binding FontSize}" FontWeight="SemiBold"
+                       MinWidth="110" TextAlignment="Center" LineHeight="100"
                        Text="{Binding DisplayValue}" />
             <TextBlock Canvas.Left="20" Canvas.Top="80" FontSize="20" FontWeight="SemiBold"
                        Text="{Binding DisplayMin}" />

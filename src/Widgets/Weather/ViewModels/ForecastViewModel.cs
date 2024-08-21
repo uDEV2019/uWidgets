@@ -1,4 +1,3 @@
-using Avalonia.Collections;
 using Avalonia.Controls;
 using Avalonia.Media;
 using ReactiveUI;
@@ -6,7 +5,6 @@ using uWidgets.Services;
 using Weather.Models;
 using Weather.Models.Forecast;
 using Weather.Services;
-using Weather.Views.Controls;
 
 namespace Weather.ViewModels;
 
@@ -40,6 +38,7 @@ public class ForecastViewModel : ReactiveObject, IDisposable
         CurrentMax = $"{forecast.Daily.Max[0]:0}";
         TemperatureMetric = new(forecast.Daily.Min.Min(), forecast.Daily.Max.Max(), forecast.Current.Temperature, null);
         UVIndex = new(0, 10, forecast.Hourly.UVIndex[currentHour], WeatherIcon.Clear);
+        Pressure = new(960, 1050, forecast.Current.Pressure, WeatherIcon.Pressure);
         HourlyForecast = Enumerable
             .Range(currentHour, forecast.Hourly.Temperature.Count - currentHour)
             .Select(hour => GetHourlyForecast(forecast, hour % 24));
@@ -152,6 +151,13 @@ public class ForecastViewModel : ReactiveObject, IDisposable
     {
         get => uvIndex;
         private set => this.RaiseAndSetIfChanged(ref uvIndex, value);
+    }
+
+    private MetricViewModel pressure = new(960, 1050, 960, WeatherIcon.Pressure);
+    public MetricViewModel Pressure
+    {
+        get => pressure;
+        private set => this.RaiseAndSetIfChanged(ref pressure, value);
     }
 
     public void Dispose()

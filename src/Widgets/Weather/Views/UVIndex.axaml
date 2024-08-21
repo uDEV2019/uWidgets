@@ -4,6 +4,6 @@
              xmlns:controls="clr-namespace:Weather.Views.Controls"
              x:DataType="viewModels:ForecastViewModel"
              x:Class="Weather.Views.UVIndex"
-             Margin="6">
+             Margin="0">
     <controls:Metric DataContext="{Binding UVIndex}" />
 </UserControl>

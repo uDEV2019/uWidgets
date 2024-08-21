@@ -348,6 +348,24 @@ namespace Weather.Locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Significat, rapid changes in pressure are used to predict changes in the weather.
+        /// </summary>
+        public static string Weather_Pressure_Subtitle {
+            get {
+                return ResourceManager.GetString("Weather_Pressure_Subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pressure.
+        /// </summary>
+        public static string Weather_Pressure_Title {
+            get {
+                return ResourceManager.GetString("Weather_Pressure_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to See the current temperature for your location.
         /// </summary>
         public static string Weather_Temperature_Subtitle {
