@@ -134,4 +134,10 @@
     <data name="Weather_Pressure_Subtitle" xml:space="preserve">
         <value>Значительные, быстрые изменения давления используются для прогнозирования изменений погоды</value>
     </data>
+    <data name="Weather_SunriseSunset_Subtitle" xml:space="preserve">
+        <value>Cмотрите предстоящий восход или закат солнца в вашем местоположении</value>
+    </data>
+    <data name="Weather_SunriseSunset_Title" xml:space="preserve">
+        <value>Восход и закат</value>
+    </data>
 </root>

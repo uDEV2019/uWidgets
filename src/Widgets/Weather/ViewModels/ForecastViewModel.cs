@@ -41,7 +41,7 @@ public class ForecastViewModel : ReactiveObject, IDisposable
         Pressure = new(960, 1050, forecast.Current.Pressure, WeatherIcon.Pressure);
         SunsetSunrise = GetSunsetSunrise(forecast);
         HourlyForecast = Enumerable
-            .Range(currentHour, forecast.Hourly.Temperature.Count - currentHour)
+            .Range(currentHour, 24)
             .Select(hour => GetHourlyForecast(forecast, hour % 24));
         DailyForecast = Enumerable
             .Range(0, forecast.Daily.Min.Count)

@@ -348,7 +348,7 @@ namespace Weather.Locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Significat, rapid changes in pressure are used to predict changes in the weather.
+        ///   Looks up a localized string similar to Significan, rapid changes in pressure are used to predict changes in the weather.
         /// </summary>
         public static string Weather_Pressure_Subtitle {
             get {
@@ -362,6 +362,24 @@ namespace Weather.Locales {
         public static string Weather_Pressure_Title {
             get {
                 return ResourceManager.GetString("Weather_Pressure_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to See the upcoming sunrise or sunset for your location.
+        /// </summary>
+        public static string Weather_SunriseSunset_Subtitle {
+            get {
+                return ResourceManager.GetString("Weather_SunriseSunset_Subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sunrise and Sunset.
+        /// </summary>
+        public static string Weather_SunriseSunset_Title {
+            get {
+                return ResourceManager.GetString("Weather_SunriseSunset_Title", resourceCulture);
             }
         }
         
