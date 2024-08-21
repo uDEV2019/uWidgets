@@ -54,7 +54,11 @@ public partial class Widget : Window
         Unloaded += OnUnloaded;
     }
 
-    private void OnResized(object? sender, WindowResizedEventArgs e) => AfterResize();
+    private void OnResized(object? sender, WindowResizedEventArgs e)
+    {
+        if (appSettingsProvider.Get().Theme.UseNativeFrame)
+            AfterResize();
+    }
 
     private void OnActivated(object? sender, EventArgs e)
     {
