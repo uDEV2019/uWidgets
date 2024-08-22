@@ -96,6 +96,7 @@ public partial class Widget : Window
         ContentPresenter.Height = Height / scaleFactor;
         if (Math.Abs(scaleFactor - 1.0) < 0.01) return;
         
+        ContentPresenter.RenderTransformOrigin = new RelativePoint(0, 0, RelativeUnit.Absolute);
         ContentPresenter.RenderTransform = new ScaleTransform(scaleFactor, scaleFactor);
     }
 
