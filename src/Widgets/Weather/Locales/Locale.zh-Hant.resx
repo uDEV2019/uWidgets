@@ -234,4 +234,22 @@
   <data name="Weather_UVIndex_Subtitle" xml:space="preserve">
     <value>查看您所在位置的當前紫外線指數</value>
   </data>
+  <data name="Weather_Pressure_Title" xml:space="preserve">
+    <value>氣壓</value>
+  </data>
+  <data name="Weather_Pressure_Subtitle" xml:space="preserve">
+    <value>氣壓顯著且快速的變化可用來預測天氣的變化</value>
+  </data>
+  <data name="Weather_SunriseSunset_Title" xml:space="preserve">
+    <value>日出和日落</value>
+  </data>
+  <data name="Weather_SunriseSunset_Subtitle" xml:space="preserve">
+    <value>查看您所在位置的日出或日落時間</value>
+  </data>
+  <data name="Weather_AirQuality_Title" xml:space="preserve">
+    <value>空氣品質指數</value>
+  </data>
+  <data name="Weather_AirQuality_Subtitle" xml:space="preserve">
+    <value>查看您所在位置目前的空氣品質指數</value>
+  </data>
 </root>
