@@ -65,6 +65,8 @@ public partial class Widget : Window
     {
         Position = new PixelPoint(widgetLayoutProvider.Get().X, widgetLayoutProvider.Get().Y);
         Scale();
+  
+        InteropService.IgnoreShowDesktop(this);
         InteropService.RemoveWindowFromAltTab(this);
     }
 
