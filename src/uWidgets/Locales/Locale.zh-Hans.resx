@@ -351,4 +351,10 @@
   <data name="Settings_Advanced_FontFamily_Subtitle" xml:space="preserve">
     <value>小部件使用的字体</value>
   </data>
+  <data name="Settings_Advanced_UseNativeFrame_Subtitle" xml:space="preserve">
+    <value>使用原生窗口框架</value>
+  </data>
+  <data name="Settings_Advanced_UseNativeFrame_Title" xml:space="preserve">
+    <value>原生框架</value>
+  </data>
 </root>
