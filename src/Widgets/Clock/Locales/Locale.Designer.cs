@@ -150,6 +150,24 @@ namespace Clock.Locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Today.
+        /// </summary>
+        public static string Clock_Today {
+            get {
+                return ResourceManager.GetString("Clock_Today", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tomorrow.
+        /// </summary>
+        public static string Clock_Tomorrow {
+            get {
+                return ResourceManager.GetString("Clock_Tomorrow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 24-hour time.
         /// </summary>
         public static string Clock_Use24Hours {
@@ -173,6 +191,15 @@ namespace Clock.Locales {
         public static string Clock_World_Title {
             get {
                 return ResourceManager.GetString("Clock_World_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yesterday.
+        /// </summary>
+        public static string Clock_Yesterday {
+            get {
+                return ResourceManager.GetString("Clock_Yesterday", resourceCulture);
             }
         }
     }

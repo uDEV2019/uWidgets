@@ -1,4 +1,4 @@
 ﻿namespace Clock.Models;
 
 public record WorldClockModel(
-    List<double?> TimeZones);
+    List<string?> TimeZoneIds);

@@ -1,6 +1,7 @@
 ﻿using Clock.Models;
 using ReactiveUI;
 using uWidgets.Services;
+using Locale = Clock.Locales.Locale;
 
 namespace Clock.ViewModels;
 
@@ -33,18 +34,52 @@ public class AnalogClockViewModel : ReactiveObject, IDisposable
         MinuteHand = new ClockHandViewModel(GetMinutesAngle(time), 365, false);
         SecondHand = new ClockHandViewModel(GetSecondsAngle(time), 460, true, clockModel.ShowSeconds);
     }
+    
+    private TimeZoneInfo TimeZoneInfo => clockModel.TimeZoneId != null
+        ? TimeZoneInfo.FindSystemTimeZoneById(clockModel.TimeZoneId)
+        : TimeZoneInfo.Local;
 
-    private DateTime Time => clockModel.TimeZone.HasValue 
-        ? DateTime.UtcNow.AddHours(clockModel.TimeZone.Value) 
-        : DateTime.Now;
-
-    private double Diff => (Time - DateTime.Now).TotalMinutes / 60;
+    private DateTime Time => TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, TimeZoneInfo);
         
-    public string TimeZoneDiff => clockModel.TimeZone == null 
-        ? string.Empty 
-        : Math.Abs(Math.Round(Diff) - Diff) > 0.1 
-            ? $"{Diff:+0.0;-0.0;0}" 
-            : $"{Diff:+0;-0;0}";
+    public string CityAbbreviation => TimeZoneInfo.Id == TimeZoneInfo.Local.Id 
+        ? "" 
+        : TimeZoneInfo.DisplayName.Split(") ").Last()[..3].ToUpper();
+
+    private string CityFullName => TimeZoneInfo.DisplayName.Split(") ").Last().Split(", ").First().Split("(").First();
+
+    public string CityName => CityFullName.Length > 9 ? CityFullName[..9] + "…" : CityFullName;
+    
+    public string Date => (Time.Date - DateTime.Now.Date).Days switch
+    {
+        > 0 => Locale.Clock_Tomorrow,
+        < 0 => Locale.Clock_Yesterday,
+        _ => Locale.Clock_Today
+    };
+    
+    public string TimeZoneDiff => (Time - DateTime.Now).Hours switch
+    {
+        > 0 => $"+{(Time - DateTime.Now):hh\\:mm}",
+        < 0 => $"-{(Time - DateTime.Now):hh\\:mm}",
+        _ => "00:00"
+    };
+
+    private bool showCityName;
+    public bool ShowCityName
+    {
+        get => showCityName;
+        set
+        {
+            ShowCityAbbreviation = !value;
+            this.RaiseAndSetIfChanged(ref showCityName, value);
+        }
+    }
+
+    private bool showCityAbbreviation;
+    public bool ShowCityAbbreviation
+    {
+        get => showCityAbbreviation;
+        set => this.RaiseAndSetIfChanged(ref showCityAbbreviation, value);
+    }
         
     private ClockHandViewModel? hourHand;
     public ClockHandViewModel? HourHand

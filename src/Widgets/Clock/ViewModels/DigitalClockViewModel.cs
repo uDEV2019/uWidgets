@@ -25,12 +25,14 @@ public class DigitalClockViewModel : ReactiveObject, IDisposable
 
     private void UpdateTime()
     {
-        Time = clockModel.TimeZone.HasValue 
-            ? DateTime.UtcNow.AddHours(clockModel.TimeZone.Value) 
-            : DateTime.Now;
+        Time = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, TimeZoneInfo);
 
         this.RaisePropertyChanged(nameof(TimeText));
     }
+    
+    private TimeZoneInfo TimeZoneInfo => clockModel.TimeZoneId != null
+        ? TimeZoneInfo.FindSystemTimeZoneById(clockModel.TimeZoneId)
+        : TimeZoneInfo.Local;
 
     private DateTime time;
     public DateTime Time

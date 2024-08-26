@@ -27,23 +27,20 @@ public class AnalogClockSettingsViewModel(IWidgetLayoutProvider widgetLayoutProv
         set => UpdateClockModel(clockModel with { Use24Hours = value });
     }
 
-    public bool ShowTimeZones => clockModel.TimeZone.HasValue;
+    public bool ShowTimeZones => clockModel.TimeZoneId != null;
 
     public bool UseLocalTimeZone
     {
-        get => !clockModel.TimeZone.HasValue;
-        set => UpdateClockModel(clockModel with { TimeZone = value ? null : 0 });
+        get => clockModel.TimeZoneId == null;
+        set => UpdateClockModel(clockModel with { TimeZoneId = value ? null : TimeZoneInfo.Local.Id });
     }
 
     public TimeZoneInfo TimeZone
     {
-        get
-        {
-            var timespan = TimeSpan.FromHours(clockModel.TimeZone ?? 0);
-            var name = $"({(timespan.Hours >= 0 ? "UTC+" : "UTC")}{timespan.Hours:00}:{timespan.Minutes:D2})";
-            return TimeZoneInfo.CreateCustomTimeZone(name, timespan, name, name);
-        }
-        set => UpdateClockModel(clockModel with { TimeZone = value.BaseUtcOffset.TotalMinutes / 60 });
+        get => clockModel.TimeZoneId != null
+                ? TimeZoneInfo.FindSystemTimeZoneById(clockModel.TimeZoneId)
+                : TimeZoneInfo.Local;
+        set => UpdateClockModel(clockModel with { TimeZoneId = value.Id });
     }
 
     public TimeZoneInfo[] TimeZones => TimeZoneInfo.GetSystemTimeZones().Append(TimeZone).ToArray();

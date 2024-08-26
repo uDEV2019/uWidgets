@@ -13,7 +13,7 @@ public class WorldClockSettingsViewModel(IWidgetLayoutProvider widgetLayoutProvi
     {
         var model = widgetLayoutProvider.Get().GetModel<WorldClockModel>();
 
-        if (model?.TimeZones == null || model.TimeZones.Count < 4)
+        if (model?.TimeZoneIds == null || model.TimeZoneIds.Count < 4)
             return new WorldClockModel([null, null, null, null]);
 
         return model;
@@ -52,15 +52,16 @@ public class WorldClockSettingsViewModel(IWidgetLayoutProvider widgetLayoutProvi
 
     private TimeZoneInfo Get(int index)
     {
-        var baseUtcOffset = clockModel.TimeZones[index];
-        var timespan = TimeSpan.FromHours(baseUtcOffset ?? 0);
-        var name = $"({(timespan.Hours >= 0 ? "UTC+" : "UTC")}{timespan.Hours:00}:{timespan.Minutes:D2})";
-        return TimeZoneInfo.CreateCustomTimeZone(name, timespan, name, name);
+        var id = clockModel.TimeZoneIds[index];
+        
+        return id != null
+            ? TimeZoneInfo.FindSystemTimeZoneById(id)
+            : TimeZoneInfo.Local;
     }
 
     private void Set(int index, TimeZoneInfo timeZone)
     {
-        clockModel.TimeZones[index] = timeZone.BaseUtcOffset.TotalMinutes / 60;
+        clockModel.TimeZoneIds[index] = timeZone.Id;
         UpdateClockModel();
     }
     

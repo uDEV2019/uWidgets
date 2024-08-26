@@ -57,4 +57,13 @@
     <data name="Clock_ShowDate" xml:space="preserve">
         <value>Show date</value>
     </data>
+    <data name="Clock_Today" xml:space="preserve">
+        <value>Today</value>
+    </data>
+    <data name="Clock_Yesterday" xml:space="preserve">
+        <value>Yesterday</value>
+    </data>
+    <data name="Clock_Tomorrow" xml:space="preserve">
+        <value>Tomorrow</value>
+    </data>
 </root>

@@ -43,6 +43,10 @@
         <DependentUpon>Locale.resx</DependentUpon>
         <Generator>PublicResXFileCodeGenerator</Generator>
       </Compile>
+      <Compile Update="Views\Controls\AnalogWorldSingle.axaml.cs">
+        <DependentUpon>AnalogWorldSingle.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
     </ItemGroup>
 
     <ItemGroup>
@@ -59,5 +63,6 @@
     <ItemGroup>
       <PackageReference Include="Avalonia" Version="11.1.2" PrivateAssets="all" ExcludeAssets="runtime" />
       <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.11" PrivateAssets="all" ExcludeAssets="runtime" />
+      <PackageReference Include="TimeZoneNames" Version="6.0.0" />
     </ItemGroup>
 </Project>

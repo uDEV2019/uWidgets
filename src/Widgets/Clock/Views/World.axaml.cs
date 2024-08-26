@@ -23,6 +23,12 @@ public partial class World : UserControl
         
         Grid.ColumnDefinitions = new ColumnDefinitions(wide ? "*,*,*,*" : "*,*");
         Grid.RowDefinitions = new RowDefinitions(wide ? "*" : "*,*");
+
+        (First.DataContext as AnalogClockViewModel)!.ShowCityName = wide;
+        (Second.DataContext as AnalogClockViewModel)!.ShowCityName = wide;
+        (Third.DataContext as AnalogClockViewModel)!.ShowCityName = wide;
+        (Fourth.DataContext as AnalogClockViewModel)!.ShowCityName = wide;
+        
         Grid.SetColumn(Third, wide ? 2 : 0);
         Grid.SetRow(Third, wide ? 0 : 1);
         Grid.SetColumn(Fourth, wide ? 3 : 1);
