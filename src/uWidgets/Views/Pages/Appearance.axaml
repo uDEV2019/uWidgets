@@ -48,6 +48,12 @@
             Subtitle="{x:Static locales:Locale.Settings_Appearance_Transparency_Subtitle}">
             <ToggleSwitch IsChecked="{Binding Transparency}" />
         </controls:Setting>
+        <controls:Setting Icon="{DynamicResource Transparency}" 
+                          IsVisible="{Binding Transparency}"
+                          Title="{x:Static locales:Locale.Settings_Appearance_OpacityLevel_Title}"
+                          Subtitle="{x:Static locales:Locale.Settings_Appearance_OpacityLevel_Subtitle}">
+            <NumericUpDown MinWidth="130" Minimum="0" Maximum="1" Increment="0.05" Value="{Binding OpacityLevel}" />
+        </controls:Setting>
         <controls:Setting Icon="{DynamicResource Monochrome}" 
                           Title="{x:Static locales:Locale.Settings_Appearance_Monochrome_Title}" 
                           Subtitle="{x:Static locales:Locale.Settings_Appearance_Monochrome_Subtitle}">

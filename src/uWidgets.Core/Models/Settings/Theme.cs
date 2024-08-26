@@ -14,6 +14,9 @@
 /// <param name="Transparency">
 /// Should the application use transparency effects
 /// </param>
+/// <param name="OpacityLevel">
+/// Widget's background opacity level
+/// </param>
 /// <param name="Monochrome">
 /// Should the application use monochrome theme
 /// </param>
@@ -23,4 +26,11 @@
 /// <param name="FontFamily">
 /// Font family to use
 /// </param>
-public record Theme(bool? DarkMode, string? AccentColor, bool Transparency, bool Monochrome, bool UseNativeFrame, string FontFamily);
+public record Theme(
+    bool? DarkMode, 
+    string? AccentColor, 
+    bool Transparency, 
+    double OpacityLevel, 
+    bool Monochrome, 
+    bool UseNativeFrame, 
+    string FontFamily);

@@ -438,6 +438,24 @@ namespace uWidgets.Locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Opacity level of widget&apos;s background.
+        /// </summary>
+        public static string Settings_Appearance_OpacityLevel_Subtitle {
+            get {
+                return ResourceManager.GetString("Settings_Appearance_OpacityLevel_Subtitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Opacity Level.
+        /// </summary>
+        public static string Settings_Appearance_OpacityLevel_Title {
+            get {
+                return ResourceManager.GetString("Settings_Appearance_OpacityLevel_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Presets.
         /// </summary>
         public static string Settings_Appearance_Presets {

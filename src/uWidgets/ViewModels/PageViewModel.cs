@@ -1,7 +1,4 @@
 ﻿using System;
-using System.IO;
-using Avalonia;
-using Avalonia.Controls;
 using Avalonia.Media;
 using uWidgets.Core.Models;
 
