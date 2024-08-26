@@ -47,7 +47,7 @@ public class AnalogClockViewModel : ReactiveObject, IDisposable
 
     private string CityFullName => TimeZoneInfo.DisplayName.Split(") ").Last().Split(", ").First().Split("(").First();
 
-    public string CityName => CityFullName.Length > 9 ? CityFullName[..9] + "…" : CityFullName;
+    public string CityName => CityFullName.Length > 11 ? CityFullName[..9] + "…" : CityFullName;
     
     public string Date => (Time.Date - DateTime.Now.Date).Days switch
     {
@@ -55,11 +55,13 @@ public class AnalogClockViewModel : ReactiveObject, IDisposable
         < 0 => Locale.Clock_Yesterday,
         _ => Locale.Clock_Today
     };
+
+    public TimeSpan TimeZoneDiffInternal(DateTime utcNow) => TimeZoneInfo.ConvertTimeFromUtc(utcNow, TimeZoneInfo) - TimeZoneInfo.ConvertTimeFromUtc(utcNow, TimeZoneInfo.Local);
     
-    public string TimeZoneDiff => (Time - DateTime.Now).Hours switch
+    public string TimeZoneDiff => TimeZoneDiffInternal(DateTime.UtcNow).Hours switch
     {
-        > 0 => $"+{(Time - DateTime.Now):hh\\:mm}",
-        < 0 => $"-{(Time - DateTime.Now):hh\\:mm}",
+        > 0 => $"+{TimeZoneDiffInternal(DateTime.UtcNow):hh\\:mm}",
+        < 0 => $"-{TimeZoneDiffInternal(DateTime.UtcNow):hh\\:mm}",
         _ => "00:00"
     };
 
