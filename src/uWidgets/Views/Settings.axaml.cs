@@ -1,4 +1,7 @@
-﻿using Avalonia.Controls;
+﻿using System.Diagnostics;
+using Avalonia;
+using Avalonia.Controls;
+using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using uWidgets.Core.Interfaces;
@@ -20,6 +23,21 @@ public partial class Settings : Window
         Unloaded += OnUnloaded;
         InitializeComponent();
         ListBox.SelectedItem = SettingsViewModel.MenuItems[1];
+    }
+    
+    private void Restart(object? sender, RoutedEventArgs e)
+    {
+        var executablePath = Process.GetCurrentProcess().MainModule?.FileName;
+        if (executablePath == null) return;
+        
+        Process.Start(executablePath);
+        Exit(sender, e);
+    }
+
+    private void Exit(object? sender, RoutedEventArgs e)
+    {
+        if (Application.Current?.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktopApp) 
+            desktopApp.Shutdown();
     }
 
     private void OnKeyDown(object? sender, KeyEventArgs e)

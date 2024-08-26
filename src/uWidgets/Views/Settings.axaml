@@ -40,9 +40,17 @@
                 </ScrollViewer>
             </SplitView.Pane>
             <SplitView.Content>
-                <Grid RowDefinitions="Auto, *" MaxWidth="800">
-                    <TextBlock Grid.Row="0" FontSize="28" FontWeight="SemiBold" Text="{Binding CurrentPageTitle}" Margin="0 0 0 32" />
-                    <ScrollViewer Grid.Row="1">
+                <Grid RowDefinitions="Auto, *" ColumnDefinitions="*, Auto" MaxWidth="800">
+                    <TextBlock Grid.Row="0" Grid.Column="0" FontSize="28" FontWeight="SemiBold" Text="{Binding CurrentPageTitle}" Margin="0 0 0 32" />
+                    <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Top" Spacing="4" Margin="16 0">
+                        <Button Click="Restart" Background="{DynamicResource SystemControlBackgroundAltHighBrush}">
+                            <PathIcon Data="{DynamicResource Refresh}" />
+                        </Button>
+                        <Button Click="Exit" Background="{DynamicResource SystemControlBackgroundAltHighBrush}">
+                            <PathIcon Data="{DynamicResource Power}" />
+                        </Button>
+                    </StackPanel>
+                    <ScrollViewer Grid.Row="1" Grid.ColumnSpan="2">
                         <TransitioningContentControl Margin="0 0 16 16" Content="{Binding CurrentPage}">
                             <TransitioningContentControl.PageTransition>
                                 <CompositePageTransition>

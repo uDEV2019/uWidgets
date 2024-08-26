@@ -15,21 +15,4 @@ public partial class General : UserControl
         DataContext = new GeneralViewModel(appSettingsProvider);
         InitializeComponent();
     }
-
-    private void Restart(object? sender, RoutedEventArgs e)
-    {
-        var executablePath = Process.GetCurrentProcess().MainModule?.FileName;
-        if (executablePath == null) return;
-        
-        Process.Start(executablePath);
-        Exit(sender, e);
-    }
-
-    private void Exit(object? sender, RoutedEventArgs e)
-    {
-        if (Application.Current?.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktopApp)
-        {
-            desktopApp.Shutdown();
-        }
-    }
 }
