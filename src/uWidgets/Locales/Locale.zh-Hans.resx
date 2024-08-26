@@ -126,9 +126,6 @@
   <data name="Settings_About" xml:space="preserve">
     <value>关于</value>
   </data>
-  <data name="Settings_Appearance_Theme" xml:space="preserve">
-    <value>主题</value>
-  </data>
   <data name="Settings_Appearance_DarkMode_Title" xml:space="preserve">
     <value>选择模式</value>
   </data>
@@ -323,9 +320,6 @@
   </data>
   <data name="Settings_Advanced_Dimensions" xml:space="preserve">
     <value>形状</value>
-  </data>
-  <data name="Settings_Appearance_Presets" xml:space="preserve">
-    <value>预设</value>
   </data>
   <data name="Settings_Appearance_Presets_Windows_Title" xml:space="preserve">
     <value>Windows 风格</value>

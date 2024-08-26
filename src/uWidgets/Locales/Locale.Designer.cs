@@ -375,6 +375,24 @@ namespace uWidgets.Locales {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Apply a theme.
+        /// </summary>
+        public static string Settings_Appearance_ApplyTheme {
+            get {
+                return ResourceManager.GetString("Settings_Appearance_ApplyTheme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Colors.
+        /// </summary>
+        public static string Settings_Appearance_Colors {
+            get {
+                return ResourceManager.GetString("Settings_Appearance_Colors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Light.
         /// </summary>
         public static string Settings_Appearance_DarkMode_False {
@@ -456,15 +474,6 @@ namespace uWidgets.Locales {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Presets.
-        /// </summary>
-        public static string Settings_Appearance_Presets {
-            get {
-                return ResourceManager.GetString("Settings_Appearance_Presets", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Inter, round corners, no border, no shadow.
         /// </summary>
         public static string Settings_Appearance_Presets_Apple_Subtitle {
@@ -506,15 +515,6 @@ namespace uWidgets.Locales {
         public static string Settings_Appearance_Presets_Windows_Title {
             get {
                 return ResourceManager.GetString("Settings_Appearance_Presets_Windows_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Theme.
-        /// </summary>
-        public static string Settings_Appearance_Theme {
-            get {
-                return ResourceManager.GetString("Settings_Appearance_Theme", resourceCulture);
             }
         }
         

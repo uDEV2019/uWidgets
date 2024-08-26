@@ -27,8 +27,8 @@
     <data name="Settings_About" xml:space="preserve">
         <value>About</value>
     </data>
-    <data name="Settings_Appearance_Theme" xml:space="preserve">
-        <value>Theme</value>
+    <data name="Settings_Appearance_Colors" xml:space="preserve">
+        <value>Colors</value>
     </data>
     <data name="Settings_Appearance_DarkMode_Title" xml:space="preserve">
         <value>Choose your mode</value>
@@ -225,8 +225,8 @@
     <data name="Settings_Advanced_Dimensions" xml:space="preserve">
         <value>Dimensions</value>
     </data>
-    <data name="Settings_Appearance_Presets" xml:space="preserve">
-        <value>Presets</value>
+    <data name="Settings_Appearance_ApplyTheme" xml:space="preserve">
+        <value>Apply a theme</value>
     </data>
     <data name="Settings_Appearance_Presets_Windows_Title" xml:space="preserve">
         <value>Windows</value>

@@ -32,8 +32,8 @@
     <data name="Settings_Advanced_Size" xml:space="preserve">
         <value>Размер</value>
     </data>
-    <data name="Settings_Appearance_Theme" xml:space="preserve">
-        <value>Тема</value>
+    <data name="Settings_Appearance_Colors" xml:space="preserve">
+        <value>Цвета</value>
     </data>
     <data name="Settings_Appearance_Transparency_Title" xml:space="preserve">
         <value>Эффекты прозрачности</value>
@@ -218,8 +218,8 @@
     <data name="Settings_Advanced_WidgetRadius_Title" xml:space="preserve">
         <value>Радиус виджета</value>
     </data>
-    <data name="Settings_Appearance_Presets" xml:space="preserve">
-        <value>Шаблоны</value>
+    <data name="Settings_Appearance_ApplyTheme" xml:space="preserve">
+        <value>Применить тему</value>
     </data>
     <data name="Settings_Appearance_Presets_Windows_Title" xml:space="preserve">
         <value>Windows</value>

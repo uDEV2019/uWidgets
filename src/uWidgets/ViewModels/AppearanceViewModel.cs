@@ -1,4 +1,7 @@
+using System.Diagnostics;
 using System.Linq;
+using Avalonia;
+using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Media;
 using ReactiveUI;
 using uWidgets.Core.Interfaces;
@@ -10,9 +13,73 @@ public class AppearanceViewModel(IAppSettingsProvider appSettingsProvider) : Rea
 {
     public ThemeViewModel[] Themes =>
     [
-        new ThemeViewModel(Locale.Settings_Appearance_DarkMode_False, false),
-        new ThemeViewModel(Locale.Settings_Appearance_DarkMode_True, true),
-        new ThemeViewModel(Locale.Settings_Appearance_DarkMode_Null, null)
+        new ThemeViewModel(
+            false, 
+            new FontFamily("avares://Avalonia.Fonts.Inter#Inter"),
+            !appSettingsProvider.Get().Theme.UseNativeFrame,
+            ApplyAppleStyle),
+        new ThemeViewModel(
+            true, 
+            new FontFamily("Segoe UI"),
+            appSettingsProvider.Get().Theme.UseNativeFrame,
+            ApplyWindowsStyle),
+    ];
+    
+    private void ApplyWindowsStyle()
+    {
+        var settings = appSettingsProvider.Get();
+        var newSettings = settings with
+        {
+            Theme = settings.Theme with
+            {
+                UseNativeFrame = true,
+                FontFamily = "Segoe UI"
+            },
+            Dimensions = settings.Dimensions with
+            {
+                Radius = 0,
+            },
+        };
+        
+        appSettingsProvider.Save(newSettings);
+        Restart();
+    }
+    
+    private void ApplyAppleStyle()
+    {
+        var settings = appSettingsProvider.Get();
+        var newSettings = settings with
+        {
+            Theme = settings.Theme with
+            {
+                UseNativeFrame = false,
+                FontFamily = "Inter"
+            },
+            Dimensions = settings.Dimensions with
+            {
+                Radius = 24,
+            },
+        };
+        
+        appSettingsProvider.Save(newSettings);
+        Restart();
+    }
+    
+    private void Restart()
+    {
+        var executablePath = Process.GetCurrentProcess().MainModule?.FileName;
+        if (executablePath == null) return;
+        
+        Process.Start(executablePath);
+        if (Application.Current?.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktopApp) 
+            desktopApp.Shutdown();
+    }
+    
+    public DarkModeViewModel[] DarkModes =>
+    [
+        new DarkModeViewModel(Locale.Settings_Appearance_DarkMode_False, false),
+        new DarkModeViewModel(Locale.Settings_Appearance_DarkMode_True, true),
+        new DarkModeViewModel(Locale.Settings_Appearance_DarkMode_Null, null)
     ];
 
     public AccentColorViewModel[] AccentComboboxItems =>
@@ -48,9 +115,9 @@ public class AppearanceViewModel(IAppSettingsProvider appSettingsProvider) : Rea
         }
     }
 
-    public ThemeViewModel? DarkMode
+    public DarkModeViewModel? DarkMode
     {
-        get => Themes.FirstOrDefault(theme => theme.Value == appSettingsProvider.Get().Theme.DarkMode);
+        get => DarkModes.FirstOrDefault(theme => theme.Value == appSettingsProvider.Get().Theme.DarkMode);
         set
         {
             var settings = appSettingsProvider.Get();
