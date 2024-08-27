@@ -56,11 +56,9 @@
             <ResourceDictionary.ThemeDictionaries>
                 <ResourceDictionary x:Key="Default">
                     <SolidColorBrush x:Key="SystemControlForegroundAccentBrush" Color="{DynamicResource SystemAccentColorDark1}" />
-                    <SolidColorBrush x:Key="ThemeBackgroundBrush" Color="#A3BED3" />
                 </ResourceDictionary>
                 <ResourceDictionary x:Key="Dark">
                     <SolidColorBrush x:Key="SystemControlForegroundAccentBrush" Color="{DynamicResource SystemAccentColorLight2}" />
-                    <SolidColorBrush x:Key="ThemeBackgroundBrush" Color="#0B1830" />
                 </ResourceDictionary>
             </ResourceDictionary.ThemeDictionaries>
         </ResourceDictionary>

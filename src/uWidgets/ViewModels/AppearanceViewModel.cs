@@ -1,79 +1,16 @@
-using System.Diagnostics;
+using System.Collections.Generic;
 using System.Linq;
-using Avalonia;
-using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Media;
 using ReactiveUI;
 using uWidgets.Core.Interfaces;
 using uWidgets.Locales;
+using uWidgets.Views.Controls;
 
 namespace uWidgets.ViewModels;
 
 public class AppearanceViewModel(IAppSettingsProvider appSettingsProvider) : ReactiveObject
 {
-    public ThemeViewModel[] Themes =>
-    [
-        new ThemeViewModel(
-            false, 
-            new FontFamily("avares://Avalonia.Fonts.Inter#Inter"),
-            !appSettingsProvider.Get().Theme.UseNativeFrame,
-            ApplyAppleStyle),
-        new ThemeViewModel(
-            true, 
-            new FontFamily("Segoe UI"),
-            appSettingsProvider.Get().Theme.UseNativeFrame,
-            ApplyWindowsStyle),
-    ];
-    
-    private void ApplyWindowsStyle()
-    {
-        var settings = appSettingsProvider.Get();
-        var newSettings = settings with
-        {
-            Theme = settings.Theme with
-            {
-                UseNativeFrame = true,
-                FontFamily = "Segoe UI"
-            },
-            Dimensions = settings.Dimensions with
-            {
-                Radius = 0,
-            },
-        };
-        
-        appSettingsProvider.Save(newSettings);
-        Restart();
-    }
-    
-    private void ApplyAppleStyle()
-    {
-        var settings = appSettingsProvider.Get();
-        var newSettings = settings with
-        {
-            Theme = settings.Theme with
-            {
-                UseNativeFrame = false,
-                FontFamily = "Inter"
-            },
-            Dimensions = settings.Dimensions with
-            {
-                Radius = 24,
-            },
-        };
-        
-        appSettingsProvider.Save(newSettings);
-        Restart();
-    }
-    
-    private void Restart()
-    {
-        var executablePath = Process.GetCurrentProcess().MainModule?.FileName;
-        if (executablePath == null) return;
-        
-        Process.Start(executablePath);
-        if (Application.Current?.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktopApp) 
-            desktopApp.Shutdown();
-    }
+    public ThemeButton[] Themes => appSettingsProvider.Get().Templates.Select(theme => new ThemeButton(appSettingsProvider, theme)).ToArray();
     
     public DarkModeViewModel[] DarkModes =>
     [
@@ -163,4 +100,31 @@ public class AppearanceViewModel(IAppSettingsProvider appSettingsProvider) : Rea
             appSettingsProvider.Save(newSettings);
         }
     }
+    
+    public List<string> Fonts => ["Inter", "Segoe UI", "Microsoft YaHei"];
+
+    public string Font
+    {
+        get => appSettingsProvider.Get().Theme.FontFamily;
+        set
+        {
+            var settings = appSettingsProvider.Get();
+            var theme = settings.Theme with { FontFamily = value };
+            var newSettings = settings with { Theme = theme };
+            appSettingsProvider.Save(newSettings);
+        }
+    }
+
+    public bool UseNativeFrame
+    {
+        get => appSettingsProvider.Get().Theme.UseNativeFrame;
+        set
+        {
+            var settings = appSettingsProvider.Get();
+            var theme = settings.Theme with { UseNativeFrame = value };
+            var newSettings = settings with { Theme = theme };
+            appSettingsProvider.Save(newSettings);
+        }        
+    }
+
 }

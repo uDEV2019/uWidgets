@@ -7,25 +7,6 @@
              x:DataType="viewModels:AdvancedViewModel">
     <StackPanel Orientation="Vertical" Spacing="3">
         <TextBlock FontSize="14" FontWeight="SemiBold" Margin="0 0 0 10"
-                   Text="{x:Static locales:Locale.Settings_Advanced_Appearance}"/>
-        <controls:Setting Icon="{DynamicResource Font}" 
-                          Title="{x:Static locales:Locale.Settings_Advanced_FontFamily_Title}" 
-                          Subtitle="{x:Static locales:Locale.Settings_Advanced_FontFamily_Subtitle}">
-            <ComboBox ItemsSource="{Binding Fonts}" MinWidth="130" 
-                      SelectedItem="{Binding Font}">
-                <ComboBox.ItemTemplate>
-                    <DataTemplate>
-                        <TextBlock Text="{Binding}" Margin="0 4" />
-                    </DataTemplate>
-                </ComboBox.ItemTemplate>
-            </ComboBox>
-        </controls:Setting>
-        <controls:Setting Icon="{DynamicResource WidgetRadius}" 
-                          Title="{x:Static locales:Locale.Settings_Advanced_UseNativeFrame_Title}" 
-                          Subtitle="{x:Static locales:Locale.Settings_Advanced_UseNativeFrame_Subtitle}">
-            <ToggleSwitch IsChecked="{Binding UseNativeFrame}" />
-        </controls:Setting>
-        <TextBlock FontSize="14" FontWeight="SemiBold" Margin="0 20 0 10"
                    Text="{x:Static locales:Locale.Settings_Advanced_Size}"/>
         <controls:Setting Icon="{DynamicResource SnapSize}" 
                           Title="{x:Static locales:Locale.Settings_Advanced_SnapSize_Title}" 
