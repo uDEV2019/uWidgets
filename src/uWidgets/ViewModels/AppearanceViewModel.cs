@@ -63,19 +63,6 @@ public class AppearanceViewModel(IAppSettingsProvider appSettingsProvider) : Rea
             appSettingsProvider.Save(newSettings);
         }
     }
-
-    public bool Transparency
-    {
-        get => appSettingsProvider.Get().Theme.Transparency;
-        set
-        {
-            var settings = appSettingsProvider.Get();
-            var newTheme = settings.Theme with { Transparency = value };
-            var newSettings = settings with { Theme = newTheme };
-            appSettingsProvider.Save(newSettings);
-            this.RaisePropertyChanged();
-        }
-    }
     
     public double OpacityLevel
     {

@@ -11,9 +11,6 @@
 /// Accent color in HEX format
 /// <para><c>null</c> to use system accent color</para>
 /// </param>
-/// <param name="Transparency">
-/// Should the application use transparency effects
-/// </param>
 /// <param name="OpacityLevel">
 /// Widget's background opacity level
 /// </param>
@@ -29,7 +26,6 @@
 public record Theme(
     bool? DarkMode, 
     string? AccentColor, 
-    bool Transparency, 
     double OpacityLevel, 
     bool Monochrome, 
     bool UseNativeFrame, 

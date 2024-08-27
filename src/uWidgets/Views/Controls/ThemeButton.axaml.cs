@@ -21,8 +21,8 @@ public partial class ThemeButton : UserControl
     public bool DimWallpaper => AppTheme.DarkMode == true;
     public Brush WidgetBackground => (AppTheme.DarkMode ?? false) switch
     {
-        true => new SolidColorBrush(Color.Parse("#2E2E2E"), AppTheme.Transparency ? AppTheme.OpacityLevel : 1.0),
-        false => new SolidColorBrush(Color.Parse("#FFFFFF"), AppTheme.Transparency ? AppTheme.OpacityLevel : 1.0),
+        true => new SolidColorBrush(Color.Parse("#2E2E2E"), AppTheme.OpacityLevel),
+        false => new SolidColorBrush(Color.Parse("#FFFFFF"), AppTheme.OpacityLevel),
     };
     public CornerRadius WidgetCornerRadius => new(WidgetRadius);
     public double WidgetRadius => AppTheme.UseNativeFrame ? 2 : 10;

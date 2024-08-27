@@ -47,7 +47,7 @@ public class ThemeService : IThemeService
             Application.Current.Resources["SystemAccentColorLight1"] = color;
         }
         
-        SwitchStyle(transparentStyle, theme.Transparency);
+        SwitchStyle(transparentStyle, theme.OpacityLevel < 1);
         SwitchStyle(monochromeStyle, theme.Monochrome);
     }
 
