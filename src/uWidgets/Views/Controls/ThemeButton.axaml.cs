@@ -1,4 +1,6 @@
+using System;
 using System.Diagnostics;
+using System.Threading;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
@@ -71,7 +73,8 @@ public partial class ThemeButton : UserControl
         var newSettings = settings with { Theme = AppTheme };
         
         appSettingsProvider.Save(newSettings);
-        Restart();
+        if (settings.Theme.UseNativeFrame != newSettings.Theme.UseNativeFrame)
+            Restart();
     }
     
     private void Restart()
@@ -79,7 +82,16 @@ public partial class ThemeButton : UserControl
         var executablePath = Process.GetCurrentProcess().MainModule?.FileName;
         if (executablePath == null) return;
         
-        Process.Start(executablePath);
+        var process = Process.Start(executablePath, "--settings");
+        var tryCount = 0;
+        var maxTryCount = 10;
+        
+        while (process.MainWindowHandle == IntPtr.Zero && !process.HasExited && tryCount++ < maxTryCount)
+        {
+            Thread.Sleep(100);
+            process.Refresh();
+        }
+
         if (Application.Current?.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktopApp) 
             desktopApp.Shutdown();
     }

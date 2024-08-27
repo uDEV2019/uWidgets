@@ -1,6 +1,7 @@
 using System.Linq;
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using Microsoft.Extensions.DependencyInjection;
 using uWidgets.Core.Interfaces;
@@ -40,16 +41,17 @@ public class App : Application
         localeService.SetCulture(appSettingsProvider.Get().Region.Language);
         themeService.Apply(appSettingsProvider.Get().Theme);
 
-        // TODO Storing widgets as variable keep them in memory
-        var widgets = services
+        var widgetsCount = services
             .GetRequiredService<IWidgetFactory<Window, UserControl>>()
             .Create()
-            .ToList();
-
-        foreach (var widget in widgets) 
-            widget.Show();
-
-        if (widgets.Count == 0)
+            .Select(widget =>
+            {
+                widget.Show();
+                return widget;
+            })
+            .Count();
+        
+        if ((ApplicationLifetime is IClassicDesktopStyleApplicationLifetime { Args.Length: > 0 } desktop && desktop.Args[0] == "--settings") || widgetsCount == 0)
             services.GetRequiredService<Settings>().Show();
         
         services.GetRequiredService<UpdateService>().CheckForUpdates();
