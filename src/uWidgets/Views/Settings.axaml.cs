@@ -32,7 +32,7 @@ public partial class Settings : Window
         var executablePath = Process.GetCurrentProcess().MainModule?.FileName;
         if (executablePath == null) return;
         
-        var process = Process.Start(executablePath);
+        var process = Process.Start(executablePath, "--settings");
         var tryCount = 0;
         var maxTryCount = 10;
         
