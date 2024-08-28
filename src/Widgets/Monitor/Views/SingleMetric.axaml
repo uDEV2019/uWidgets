@@ -4,11 +4,11 @@
              xmlns:viewModels="clr-namespace:Monitor.ViewModels"
              x:Class="Monitor.Views.SingleMetric"
              x:DataType="viewModels:SingleMetricViewModel">
-    <Grid RowDefinitions="*,*">
+    <Grid RowDefinitions="*,*" Name="Grid">
         <controls:Metric VerticalAlignment="Top" HorizontalAlignment="Left" 
                          DataContext="{Binding Metric}" />
-        <Viewbox Grid.Row="1" Stretch="Uniform" HorizontalAlignment="Left" VerticalAlignment="Bottom">
-            <TextBlock FontSize="44" Text="{Binding Metric.Text}" />
+        <Viewbox Grid.Row="1" Name="Text" Stretch="Uniform" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+            <TextBlock  FontSize="44" Text="{Binding Metric.Text}" />
         </Viewbox>
     </Grid>
 </UserControl>
