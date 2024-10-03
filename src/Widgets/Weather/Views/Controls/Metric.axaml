@@ -17,7 +17,8 @@
                 </Path.Data>
             </Path>
             <Path StrokeThickness="10" StrokeLineCap="Round"
-                  StrokeDashArray="{Binding DashArray}"
+                  StrokeDashArray="21,21"
+                  StrokeDashOffset="{Binding StrokeDashOffset}"
                   Stroke="{DynamicResource SystemControlForegroundBaseHighBrush}"
                   RenderTransformOrigin="55,55">
                 <Path.RenderTransform>
