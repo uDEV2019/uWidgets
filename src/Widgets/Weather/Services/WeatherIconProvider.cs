@@ -12,42 +12,42 @@ public static class WeatherIconProvider
         {
             WeatherCode.ClearSky 
                 or WeatherCode.MostlyClear 
-                => WeatherIcon.Clear,
+                => WeatherIcon.Clear.Value,
             WeatherCode.PartlyCloudy
-                => WeatherIcon.PartlyClear,
+                => WeatherIcon.PartlyClear.Value,
             WeatherCode.Overcast 
-                => WeatherIcon.Cloudy,
+                => WeatherIcon.Cloudy.Value,
             WeatherCode.Fog 
                 or WeatherCode.DepositingRimeFog 
-                => WeatherIcon.Fog,
+                => WeatherIcon.Fog.Value,
             WeatherCode.DrizzleLightIntensity 
                 or WeatherCode.DrizzleModerateIntensity 
                 or WeatherCode.DrizzleDenseIntensity
                 or WeatherCode.FreezingDrizzleLightIntensity
                 or WeatherCode.FreezingDrizzleDenseIntensity
-                => WeatherIcon.Drizzle,
+                => WeatherIcon.Drizzle.Value,
             WeatherCode.RainSlightIntensity
                 or WeatherCode.RainModerateIntensity
                 or WeatherCode.FreezingRainLightIntensity
-                => WeatherIcon.Rain,
+                => WeatherIcon.Rain.Value,
             WeatherCode.RainHeavyIntensity
                 or WeatherCode.RainShowersSlightIntensity
                 or WeatherCode.RainShowersModerateIntensity
                 or WeatherCode.RainShowersViolentIntensity
                 or WeatherCode.FreezingRainHeavyIntensity
-                => WeatherIcon.HeavyRain,
+                => WeatherIcon.HeavyRain.Value,
             WeatherCode.SnowFallSlightIntensity
                 or WeatherCode.SnowFallModerateIntensity
-                => WeatherIcon.Snow,
+                => WeatherIcon.Snow.Value,
             WeatherCode.SnowFallHeavyIntensity
                 or WeatherCode.SnowGrains
                 or WeatherCode.SnowShowersSlightIntensity
                 or WeatherCode.SnowShowersHeavyIntensity
-                => WeatherIcon.HeavySnow,
+                => WeatherIcon.HeavySnow.Value,
             WeatherCode.ThunderstormSlightIntensity
                 or WeatherCode.ThunderstormWithSlightHail
                 or WeatherCode.ThunderstormWithHeavyHail
-                => WeatherIcon.Thunderstorm,
+                => WeatherIcon.Thunderstorm.Value,
             _ => new StreamGeometry()
         };
     }

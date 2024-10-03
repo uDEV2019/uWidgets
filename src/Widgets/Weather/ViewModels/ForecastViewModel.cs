@@ -31,14 +31,14 @@ public class ForecastViewModel : ReactiveObject, IDisposable
         var currentHour = DateTime.Now.Hour;
 
         CurrentTemperature = $"{forecast.Current.Temperature:0}°";
-        CurrentIcon = forecast.Hourly.IsDay[currentHour] > 0 ? WeatherIconProvider.GetIcon(forecast.Current.WeatherCode) : WeatherIcon.Night;
+        CurrentIcon = forecast.Hourly.IsDay[currentHour] > 0 ? WeatherIconProvider.GetIcon(forecast.Current.WeatherCode) : WeatherIcon.Night.Value;
         CurrentCondition = GetCondition(forecast.Current.WeatherCode);
         CurrentMinMax = $"{forecast.Daily.Max[0]:0}°  {forecast.Daily.Min[0]:0}°";
         CurrentMin = $"{forecast.Daily.Min[0]:0}";
         CurrentMax = $"{forecast.Daily.Max[0]:0}";
         TemperatureMetric = new(forecast.Daily.Min.Min(), forecast.Daily.Max.Max(), forecast.Current.Temperature, null);
-        UVIndex = new(0, 10, forecast.Hourly.UVIndex[currentHour], WeatherIcon.Clear);
-        Pressure = new(960, 1050, forecast.Current.Pressure, WeatherIcon.Pressure);
+        UVIndex = new(0, 10, forecast.Hourly.UVIndex[currentHour], WeatherIcon.Clear.Value);
+        Pressure = new(960, 1050, forecast.Current.Pressure, WeatherIcon.Pressure.Value);
         SunsetSunrise = GetSunsetSunrise(forecast);
         HourlyForecast = Enumerable
             .Range(currentHour, 24)
@@ -56,10 +56,10 @@ public class ForecastViewModel : ReactiveObject, IDisposable
         var now = DateTime.Now;
 
         if (now < sunrise)
-            return new(WeatherIcon.Sunrise, sunrise.ToString("HH:mm"));
+            return new(WeatherIcon.Sunrise.Value, sunrise.ToString("HH:mm"));
         if (now < sunset)
-            return new(WeatherIcon.Sunset, sunset.ToString("HH:mm"));
-        return new(WeatherIcon.Sunrise, sunriseTomorrow.ToString("HH:mm"));
+            return new(WeatherIcon.Sunset.Value, sunset.ToString("HH:mm"));
+        return new(WeatherIcon.Sunrise.Value, sunriseTomorrow.ToString("HH:mm"));
     }
 
     private DailyForecastViewModel GetDailyForecast(ForecastResponse forecast, int day)
@@ -88,7 +88,7 @@ public class ForecastViewModel : ReactiveObject, IDisposable
     {
         var time = hour.ToString();
         var code = forecast.Hourly.WeatherCode[hour];
-        var icon = forecast.Hourly.IsDay[hour] > 0 ? WeatherIconProvider.GetIcon(code) : WeatherIcon.Night;
+        var icon = forecast.Hourly.IsDay[hour] > 0 ? WeatherIconProvider.GetIcon(code) : WeatherIcon.Night.Value;
         var temperature = forecast.Hourly.Temperature[hour];
 
         return new HourlyForecastViewModel(time, icon, $"{temperature:0}°");
@@ -161,14 +161,14 @@ public class ForecastViewModel : ReactiveObject, IDisposable
         private set => this.RaiseAndSetIfChanged(ref temperatureMetric, value);
     }
     
-    private MetricViewModel uvIndex = new(0, 10, 0, WeatherIcon.Clear);
+    private MetricViewModel uvIndex = new(0, 10, 0, WeatherIcon.Clear.Value);
     public MetricViewModel UVIndex
     {
         get => uvIndex;
         private set => this.RaiseAndSetIfChanged(ref uvIndex, value);
     }
 
-    private MetricViewModel pressure = new(960, 1050, 960, WeatherIcon.Pressure);
+    private MetricViewModel pressure = new(960, 1050, 960, WeatherIcon.Pressure.Value);
     public MetricViewModel Pressure
     {
         get => pressure;

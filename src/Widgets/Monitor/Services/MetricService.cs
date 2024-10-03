@@ -11,11 +11,11 @@ public static class MetricService
     {
         return type switch
         {
-            MetricType.CpuUsage => MetricIcon.CpuUsage,
-            MetricType.RamUsage => MetricIcon.RamUsage,
-            MetricType.DiskUsage => MetricIcon.DiskUsage,
-            MetricType.NetworkUsage => MetricIcon.NetworkUsage,
-            MetricType.BatteryLevel => MetricIcon.BatteryLevel,
+            MetricType.CpuUsage => MetricIcon.CpuUsage.Value,
+            MetricType.RamUsage => MetricIcon.RamUsage.Value,
+            MetricType.DiskUsage => MetricIcon.DiskUsage.Value,
+            MetricType.NetworkUsage => MetricIcon.NetworkUsage.Value,
+            MetricType.BatteryLevel => MetricIcon.BatteryLevel.Value,
             _ => new StreamGeometry()
         };
     }
