@@ -5,6 +5,7 @@
 /// </summary>
 public record AppSettings(
     Theme Theme, 
+    Theme[] Templates,
     Layout Layout, 
     Dimensions Dimensions, 
     Region Region, 

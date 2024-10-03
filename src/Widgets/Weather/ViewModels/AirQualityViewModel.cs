@@ -24,10 +24,10 @@ public class AirQualityViewModel : ReactiveObject, IDisposable
     {
         var forecast = await provider.GetAirQualityAsync(model.Latitude, model.Longitude);
         if (forecast?.Current == null) return;
-        Metric = new(0, 1000, forecast.Current.AirQualityIndex, WeatherIcon.Wind);
+        Metric = new(0, 100, forecast.Current.AirQualityIndex, WeatherIcon.Wind.Value);
     }
     
-    private MetricViewModel metric = new(0, 1000, 0, null);
+    private MetricViewModel metric = new(0, 100, 0, null);
     public MetricViewModel Metric
     {
         get => metric;

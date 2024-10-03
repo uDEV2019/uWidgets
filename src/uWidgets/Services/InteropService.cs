@@ -1,13 +1,24 @@
 using System;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
+using System.Text;
 using Avalonia.Controls;
 
 namespace uWidgets.Services;
 
 public class InteropService
 {
+    private const int SPI_GETDESKWALLPAPER = 0x0073;
 
+    [DllImport("user32.dll", CharSet = CharSet.Auto)]
+    private static extern int SystemParametersInfo(int uAction, int uParam, StringBuilder lpvParam, int fuWinIni);
+
+    public static string GetWallpaperPath()
+    {
+        StringBuilder wallpaperPath = new StringBuilder(260);
+        SystemParametersInfo(SPI_GETDESKWALLPAPER, wallpaperPath.Capacity, wallpaperPath, 0);
+        return wallpaperPath.ToString();
+    }
     public static void RemoveWindowFromAltTab(Window window)
     {
         const int WS_EX_TOOLWINDOW = 0x00000080;

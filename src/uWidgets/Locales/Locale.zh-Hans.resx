@@ -126,6 +126,9 @@
   <data name="Settings_About" xml:space="preserve">
     <value>关于</value>
   </data>
+  <data name="Settings_Appearance_Colors" xml:space="preserve">
+    <value>颜色</value>
+  </data>
   <data name="Settings_Appearance_DarkMode_Title" xml:space="preserve">
     <value>选择模式</value>
   </data>
@@ -321,6 +324,9 @@
   <data name="Settings_Advanced_Dimensions" xml:space="preserve">
     <value>形状</value>
   </data>
+  <data name="Settings_Appearance_ApplyTheme" xml:space="preserve">
+    <value>应用主题</value>
+  </data>
   <data name="Settings_Appearance_Presets_Windows_Title" xml:space="preserve">
     <value>Windows 风格</value>
   </data>
@@ -350,5 +356,11 @@
   </data>
   <data name="Settings_Advanced_UseNativeFrame_Title" xml:space="preserve">
     <value>原生框架</value>
+  </data>
+  <data name="Settings_Appearance_OpacityLevel_Title" xml:space="preserve">
+    <value>不透明度</value>
+  </data>
+  <data name="Settings_Appearance_OpacityLevel_Subtitle" xml:space="preserve">
+    <value>小部件背景的不透明度</value>
   </data>
 </root>
