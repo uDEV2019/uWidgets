@@ -156,4 +156,13 @@
   <data name="Clock_ShowDate" xml:space="preserve">
     <value>顯示日期</value>
   </data>
+  <data name="Clock_Today" xml:space="preserve">
+    <value>今天</value>
+  </data>
+  <data name="Clock_Yesterday" xml:space="preserve">
+    <value>昨天</value>
+  </data>
+  <data name="Clock_Tomorrow" xml:space="preserve">
+    <value>明天</value>
+  </data>
 </root>
