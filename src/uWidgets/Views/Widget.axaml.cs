@@ -70,7 +70,7 @@ public partial class Widget : Window
 
     public bool ShowEditButton => editWidgetWindow != null;
     public string Edit => $"{Locale.Widget_Edit} \"{widgetLayoutProvider.Get().Type}\"";
-    public CornerRadius Radius => new(appSettingsProvider.Get().Dimensions.Radius / (Screens.ScreenFromWindow(this)?.Scaling ?? 1.0));
+    public CornerRadius Radius => appSettingsProvider.Get().Theme.UseNativeFrame ? new(0) : new(appSettingsProvider.Get().Dimensions.Radius / (Screens.ScreenFromWindow(this)?.Scaling ?? 1.0));
     
     public SystemDecorations WidgetSystemDecorations => appSettingsProvider.Get().Theme.UseNativeFrame
         ? SystemDecorations.BorderOnly

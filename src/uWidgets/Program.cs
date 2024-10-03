@@ -30,7 +30,7 @@ class Program
     // Avalonia configuration, don't remove; also used by visual designer.
     public static AppBuilder BuildAvaloniaApp()
     {
-        var radius = new AppSettingsProvider().Get().Dimensions.Radius;
+        var settings = new AppSettingsProvider().Get();
         
         return AppBuilder.Configure<App>()
             .UseWin32()
@@ -39,7 +39,7 @@ class Program
             .With(new Win32PlatformOptions
             {
                 CompositionMode = new[] { Win32CompositionMode.WinUIComposition },
-                WinUICompositionBackdropCornerRadius = radius,
+                WinUICompositionBackdropCornerRadius = settings.Theme.UseNativeFrame ? 0 : settings.Dimensions.Radius
             })
             .LogToTrace();
     }
